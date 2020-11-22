@@ -11,7 +11,6 @@ export function JournalHappy(props) {
 
   return (
     <>
-      <LogoProfile />
       <JournalTitle />
       <form>
         <MultilineTextFields question="What is something that inspired you recently?"/>

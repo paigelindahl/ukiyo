@@ -9,7 +9,6 @@ export function MainPage(props) {
 
   return (
     <>
-      <LogoProfile/>
       <Greeting/>
       <Quote/>
       <CustomSlider/>

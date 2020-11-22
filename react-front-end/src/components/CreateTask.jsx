@@ -9,7 +9,6 @@ export function CreateTask(props) {
 
   return (
     <>
-      <LogoProfile/>
       <div className="title">
         <h2>Let's</h2>
         <h2>GET TASKING!</h2>

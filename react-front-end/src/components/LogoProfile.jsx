@@ -3,6 +3,7 @@ import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 // import logo from './logo.png';
 import './styles/LogoProfile.scss';
+import { Link } from 'react-router-dom';
 
 
 // const useStyles = makeStyles((theme) => ({
@@ -25,7 +26,9 @@ export function LogoProfile(props) {
   return (
     <>
       <div className="logo">
-        <h1>UKIYO</h1>
+        <Link to="/dashboard" className="logo-link">
+          <h1>UKIYO</h1>
+        </Link>
         <div className="profile-info">
           <Avatar>P</Avatar>
           <h5 className="user-name">Paige</h5>

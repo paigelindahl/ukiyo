@@ -5,6 +5,8 @@ import { MainPage } from './components/MainPage';
 import { JournalSad } from './components/JournalSad';
 import { JournalHappy } from './components/JournalHappy';
 import { CreateTask } from './components/CreateTask';
+import { LogoProfile } from './components/LogoProfile';
+import { Dashboard } from './components/Dashboard';
 import { 
   BrowserRouter as Router,
   Switch,
@@ -30,10 +32,12 @@ const App = function(){
     return (
       <Router>
         <div className="App">
+          <LogoProfile/>
           <Route exact path="/" component={MainPage}/>
           <Route path="/journal1" component={JournalSad}/>
           <Route path="/journal2" component={JournalHappy}/>
           <Route path="/createtask" component={CreateTask} />
+          <Route path="/dashboard" component={Dashboard} />
         </div>
       </Router>
 

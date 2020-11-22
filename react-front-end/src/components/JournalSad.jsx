@@ -11,7 +11,6 @@ export function JournalSad(props) {
 
   return (
     <>
-      <LogoProfile/>
       <JournalTitle/>
       <form>
         <MultilineTextFields question="What is something that made you smile in the last little while?"/>
