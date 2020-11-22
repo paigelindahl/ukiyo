@@ -10,7 +10,7 @@ export function Quote(props) {
       <div className="quote-container">
         <div className="text-heart">
           <h5>Quote of the Day</h5>
-          <FavouriteBtn/>
+          <FavouriteBtn className="heart-icon"/>
         </div>
         <p className="quote-text">"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur adipisicing elit"</p>
       </div>

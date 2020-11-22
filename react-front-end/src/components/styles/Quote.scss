@@ -3,11 +3,22 @@ p.quote-text {
   justify-content: center;
   padding-left: 120px;
   width: 60%;
+  margin-top: 0px;
 }
 
 .text-heart {
   margin-bottom: 0px;
   display: flex;
   justify-content: center;
-  padding-left: 40px;
+  padding-left: 50px;
+
+  h5 {
+    margin-right: 10px;
+  }
+}
+
+
+
+.heart-icon {
+  padding-left: 50px;
 }
