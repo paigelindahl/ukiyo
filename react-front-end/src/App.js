@@ -4,7 +4,8 @@ import './App.css';
 import { MainPage } from './components/MainPage';
 import { JournalSad } from './components/JournalSad';
 import { JournalHappy } from './components/JournalHappy';
-import {
+import { CreateTask } from './components/CreateTask';
+import { 
   BrowserRouter as Router,
   Switch,
   Route,
@@ -32,6 +33,7 @@ const App = function(){
           <Route exact path="/" component={MainPage}/>
           <Route path="/journal1" component={JournalSad}/>
           <Route path="/journal2" component={JournalHappy}/>
+          <Route path="/createtask" component={CreateTask} />
         </div>
       </Router>
 

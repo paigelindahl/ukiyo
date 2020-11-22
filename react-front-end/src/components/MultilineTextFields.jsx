@@ -4,20 +4,20 @@ import TextField from '@material-ui/core/TextField';
 import './styles/MultilineTextFields.scss';
 
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     '& .MuiTextField-root': {
-//       margin: theme.spacing(1),
-//       width: '25ch',
-//     },
-//   },
-// }));
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
+}));
 
 export default function MultilineTextFields() {
-  // const classes = useStyles();
+  const classes = useStyles();
   const [questionOne, setQuestionOne] = React.useState('');
-  const [questionTwo, setQuestionTwo] = React.useState('');
-  const [questionThree, setQuestionThree] = React.useState('');
+  // const [questionTwo, setQuestionTwo] = React.useState('');
+  // const [questionThree, setQuestionThree] = React.useState('');
 
   const handleChangeOne = (event) => {
     setQuestionOne(event.target.value);
@@ -32,8 +32,7 @@ export default function MultilineTextFields() {
   // }
 
   return (
-    // <form className={classes.root} noValidate autoComplete="off">
-    <form>
+    <form className={classes.root} noValidate autoComplete="off">
       <div className="journal-container">
         <div className="answer-textarea">
           <TextField

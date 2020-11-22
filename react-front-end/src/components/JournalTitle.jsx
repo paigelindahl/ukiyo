@@ -6,7 +6,7 @@ export function JournalTitle(props) {
 
   return (
     <>
-      <div className="journal-title">
+      <div className="title">
         <h2>Let's</h2>
         <h2>GET JOURNALING!</h2>
       </div>
