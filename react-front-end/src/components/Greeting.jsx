@@ -1,5 +1,5 @@
 import React from 'react'
-import './Greeting.scss';
+import './styles/Greeting.scss';
 
 export function Greeting(props) {
   
@@ -8,7 +8,7 @@ export function Greeting(props) {
     <>
       <div className="greeting">
         <h4 className="day">Thursday, December 3rd</h4>
-        <h2 className="personalized-greeting">Good Morning, Paige!</h2> 
+        <h2 className="personalized-greeting">GOOD MORNING, PAIGE!</h2> 
       </div>
     </>
   )

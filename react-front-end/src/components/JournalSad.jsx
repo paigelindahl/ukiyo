@@ -1,11 +1,15 @@
 import React from 'react'
+import { LogoProfile } from './LogoProfile';
+import { JournalTitle } from './JournalTitle';
+
 
 export function JournalSad(props) {
   
 
   return (
     <>
-      <h1>I am sad</h1>
+      <LogoProfile/>
+      <JournalTitle/>
     </>
   )
 }

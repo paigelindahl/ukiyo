@@ -1,5 +1,6 @@
-import React from 'react'
-import './Quote.scss'
+import React from 'react';
+import './styles/Quote.scss';
+import { FavouriteBtn } from  './FavouriteBtn';
 
 export function Quote(props) {
   
@@ -9,8 +10,9 @@ export function Quote(props) {
       <div className="quote-container">
         <div className="text-heart">
           <h5>Quote of the Day</h5>
+          <FavouriteBtn/>
         </div>
-      <p>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum modi nostrum dolore possimus dignissimos mollitia amet ipsa, error ex pariatur suscipit eveniet architecto eum rerum libero praesentium fugit reiciendis placeat!"</p>
+        <p className="quote-text">"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur adipisicing elit"</p>
       </div>
     </>
   )
