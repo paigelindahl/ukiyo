@@ -1,0 +1,35 @@
+.answer-textarea{
+  border-radius: 20px;
+  width: 72%;
+  height: 14vh;
+  margin-bottom: 10px;
+  background-color: #FFDEA6;
+  
+  
+}
+
+.journal-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.question{
+  display:flex;
+  justify-content: flex-start;
+  margin-left: 56px;
+}
+
+.arrow-submit{
+  margin-top: 25px;
+  position: relative;
+  left: 30px;
+
+}
+
+.skip-btn{
+  margin-left: 30px;
+  position: relative;
+  left: 118px;
+  bottom: 10px;
+}
