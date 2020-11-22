@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import './styles/MultilineTextFields.scss';
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
@@ -13,59 +12,31 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MultilineTextFields() {
+export default function MultilineTextFields(props) {
   const classes = useStyles();
-  const [questionOne, setQuestionOne] = React.useState('');
-  // const [questionTwo, setQuestionTwo] = React.useState('');
-  // const [questionThree, setQuestionThree] = React.useState('');
+  const [response, setResponse] = React.useState('');
 
-  const handleChangeOne = (event) => {
-    setQuestionOne(event.target.value);
+
+  const handleChange = (event) => {
+    setResponse(event.target.value);
   };
 
-  // const handleChangeTwo = (event) => {
-  //   setQuestionTwo(event.target.value);
-  // }
-
-  // const handleChangeThree = (event) => {
-  //   setQuestionThree(event.target.value)
-  // }
+  
 
   return (
-    <form className={classes.root} noValidate autoComplete="off">
+    <div className={classes.root}>
       <div className="journal-container">
         <div className="answer-textarea">
+          <h6 className="question-title">{props.question}</h6>
           <TextField
             id="standard-multiline-flexible"
-            name="question-one"
-            // label="Why do you think you're feeling this way?"
             multiline
-            rowsMax={4}
-            value={questionOne}
-            onChange={handleChangeOne}
+            rowsMax={3}
+            value={response}
+            onChange={handleChange}
           />
         </div>
-        {/* <div className="answer-textarea">
-          <TextField
-            id="standard-multiline-flexible"
-            name="question"
-            // label="What can you do to change that?"
-            multiline
-            rowsMax={4}
-            value={questionTwo}
-            onChange={handleChangeTwo}
-          />
-        </div>
-        <div className="answer-textarea">
-          <TextField
-            id="standard-multiline-flexible"
-            // label="What are three things you are grateful for?"
-            multiline
-            rowsMax={4}
-            value={questionThree}
-            onChange={handleChangeThree}
-          />
-        </div> */}
-      </div> 
-    </form>
-    )};
+      </div>
+    </div>
+   
+  )};

@@ -1,7 +1,8 @@
 .answer-textarea{
   border-radius: 20px;
   width: 72%;
-  height: 14vh;
+  height: 17vh;
+  margin-top: 15px;
   margin-bottom: 10px;
   background-color: #FFDEA6;
   
@@ -32,4 +33,16 @@
   position: relative;
   left: 104px;
   bottom: 10px;
+  text-decoration: none;
 }
+
+.question-title{
+  text-align: left;
+  padding-left: 10px;
+}
+
+.skip-link{
+  text-decoration: none;
+  color: black;
+}
+

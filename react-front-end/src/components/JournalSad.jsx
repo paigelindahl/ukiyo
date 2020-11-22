@@ -3,7 +3,7 @@ import { LogoProfile } from './LogoProfile';
 import { JournalTitle } from './JournalTitle';
 import MultilineTextFields from './MultilineTextFields';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-
+import { Link } from 'react-router-dom';
 
 
 export function JournalSad(props) {
@@ -13,14 +13,15 @@ export function JournalSad(props) {
     <>
       <LogoProfile/>
       <JournalTitle/>
-      <h6 className="question">What is made you laugh or smile today?</h6>
-      <MultilineTextFields/>
-      <h6 className="question">What about today is better than yesterday?</h6>
-      <MultilineTextFields/>
-      <h6 className="question">What are three things your are grateful for?</h6>
-      <MultilineTextFields/>
+      <form>
+        <MultilineTextFields question="What is something that made you smile in the last little while?"/>
+        <MultilineTextFields question="What is something you are looking forward to?"/>
+        <MultilineTextFields question="What are three things you are grateful for?"/>
+      </form>
       <ArrowForwardIosIcon fontSize="large" className="arrow-submit"/>
-      <span className="skip-btn">Skip</span>
+      <Link to="/dashboard" className="skip-link">
+        <span className="skip-btn">Skip</span>
+      </Link>
     </>
   )
 }
