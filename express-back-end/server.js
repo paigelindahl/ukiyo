@@ -1,9 +1,14 @@
 const Express = require('express');
 const App = Express();
 const BodyParser = require('body-parser');
+const db = require('./db');
+// const dbHelpers = require('./helpers/dbHelpers')(db);
+
+
 const PORT = 8080;
 
 // Express Configuration
+// App.use('/api/users', usersRouter(dbHelpers));
 App.use(BodyParser.urlencoded({ extended: false }));
 App.use(BodyParser.json());
 App.use(Express.static('public'));
