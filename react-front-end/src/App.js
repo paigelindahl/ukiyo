@@ -8,10 +8,11 @@ import { CreateTask } from './components/CreateTask';
 import { LogoProfile } from './components/LogoProfile';
 import { Dashboard } from './components/Dashboard';
 import { Bubbles } from './components/Bubbles';
+import { Yoga } from './components/Yoga';
 import { Meditate } from './components/Meditate';
+import { Favourites } from './components/Favourites';
 import { 
   BrowserRouter as Router,
-  Switch,
   Route,
   Link
 } from "react-router-dom";
@@ -41,6 +42,8 @@ const App = function(){
           <Route path="/createtask" component={CreateTask} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/meditate" component={Meditate} />
+          <Route path="/yoga" component={Yoga} />
+          <Route path="/favourites" component={Favourites}/>
         </div>
       </Router>
 

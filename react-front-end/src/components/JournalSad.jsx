@@ -1,5 +1,4 @@
 import React from 'react'
-import { LogoProfile } from './LogoProfile';
 import { JournalTitle } from './JournalTitle';
 import MultilineTextFields from './MultilineTextFields';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';

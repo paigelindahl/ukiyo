@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button: {
+    color: "black"
+  }
 }));
 
 export function TransitionModal(props) {
@@ -29,7 +32,7 @@ export function TransitionModal(props) {
   };
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <Button className={classes.button} variant="outlined" color="primary" onClick={handleClickOpen}>
         <PlayArrowIcon fontSize="large"/>
       </Button>
       <Dialog

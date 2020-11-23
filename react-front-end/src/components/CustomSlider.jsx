@@ -64,7 +64,7 @@ export function CustomSlider() {
           </div>
         </div>
       </Grid>
-      <Link className="link" to='/Journal1'><ArrowForwardIosIcon fontSize="large"/></Link>
+      <Link className="link" to='/journal1'><ArrowForwardIosIcon fontSize="large"/></Link>
     </>
   );
 }

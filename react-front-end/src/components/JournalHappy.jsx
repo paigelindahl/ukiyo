@@ -1,5 +1,4 @@
 import React from 'react'
-import { LogoProfile } from './LogoProfile';
 import { JournalTitle } from './JournalTitle';
 import './styles/MultilineTextFields.scss';
 import MultilineTextFields from './MultilineTextFields';

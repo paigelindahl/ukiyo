@@ -1,130 +1,125 @@
 import React from "react";
 import { Bubbles } from "./Bubbles";
-import "./styles/Meditate.scss";
-import { TopNav } from './TopNav';
+import { TopNav } from "./TopNav";
 
 export function Meditate(props) {
   return (
-  <>
-    <TopNav/>
-    <Bubbles
-      item1={
-        <iframe
-          width="300"
-          height="500"
-          src="https://www.youtube.com/embed/6ughUyUmKEo"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      }
-      title1={"Vinyasa Flow Yoga (20min)"}
-      item2={
-        <iframe
-          width="300"
-          height="500"
-          src="https://www.youtube.com/embed/KEYSO-Tc2Go?start=1"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      }
-      title2={"Full Body Vinyasa Flow (30min)"}
-      item3={
-        <iframe
-          width="300"
-          height="500"
-          src="https://www.youtube.com/embed/hnrkkvx4d50"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      }
-      title3={
-        "Morning Yoga Flow (20min)"
-      }
-      item4={
-        <iframe
-          width="300"
-          height="500"
-          src="https://www.youtube.com/embed/6ughUyUmKEo"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      }
-      title4={"Full Body Yoga (20min)"}
-      item5={
-        <iframe
-          width="300"
-          height="500"
-          src="https://www.youtube.com/embed/_kl_DxglATI"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      }
-      title5={"Vinyasa Flow Yoga(45 min)"}
-    />
-    <Bubbles
-      item1={
-        <iframe
-          width="300"
-          height="500"
-          src="https://www.youtube.com/embed/6ughUyUmKEo"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      }
-      title1={"Vinyasa Flow Yoga(20min)"}
-      item2={
-        <iframe
-          width="300"
-          height="500"
-          src="https://www.youtube.com/embed/KEYSO-Tc2Go?start=1"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      }
-      title2={"Full Body Vinyasa Flow (30min)"}
-      item3={
-        <iframe
-          width="300"
-          height="500"
-          src="https://www.youtube.com/embed/hnrkkvx4d50"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      }
-      title3={
-        "Morning Yoga Flow (20min)"
-      }
-      item4={
-        <iframe
-          width="300"
-          height="500"
-          src="https://www.youtube.com/embed/6ughUyUmKEo"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      }
-      title4={"Full Body Yoga (20min)"}
-      item5={
-        <iframe
-          width="300"
-          height="500"
-          src="https://www.youtube.com/embed/_kl_DxglATI"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      }
-      title5={"Vinyasa Flow Yoga (45min)"}
-    />
+    <>
+      <TopNav />
+      <Bubbles
+        item1={
+          <iframe
+            src="https://open.spotify.com/embed/track/17yh12hLaAtA8ZD5hH2pvp"
+            width="300"
+            height="380"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        }
+        title1={"10-Minute Unguided Meditation"}
+        item2={
+          <iframe
+            src="https://open.spotify.com/embed/track/7szVmfe3Y110CS9SHamWZH"
+            width="300"
+            height="380"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        }
+        title2={"10-Minute Evening Stroll Meditation"}
+        item3={
+          <iframe
+            src="https://open.spotify.com/embed/track/6mi5lYz9NuIlmRfO8bT4gm"
+            width="300"
+            height="380"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        }
+        title3={"5-Minute Guided Meditation"}
+        item4={
+          <iframe
+            src="https://open.spotify.com/embed/track/7tnesh1ClZdJgJLP1H0ea3"
+            width="300"
+            height="380"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        }
+        title4={"10-Minute Guided Meditation"}
+        item5={
+          <iframe
+            src="https://open.spotify.com/embed-podcast/episode/6eOWDa0NnCM6hKZtmOJUYC"
+            width="100%"
+            height="232"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        }
+        title5={"10-Minute Choosing Positivity"}
+      />
+      <Bubbles
+        item1={
+          <iframe
+            src="https://open.spotify.com/embed-podcast/episode/4gwq1ni2o1EvM8iKdSxPal"
+            width="100%"
+            height="232"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        }
+        title1={"12-Minute Focusing When Stressed"}
+        item2={
+          <iframe
+            src="https://open.spotify.com/embed-podcast/episode/76mdZc1KbxnAYTW6AIa7n7"
+            width="100%"
+            height="232"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        }
+        title2={"9-Minute Self Care to Start Your Day"}
+        item3={
+          <iframe
+            src="https://open.spotify.com/embed-podcast/episode/51BzrDx4yfDtsfhX7IZEpj"
+            width="100%"
+            height="232"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        }
+        title3={"11-Minute Be Here Now"}
+        item4={
+          <iframe
+            src="https://open.spotify.com/embed-podcast/episode/2JQl2cyZJgQQVuiLsFq4AT"
+            width="100%"
+            height="232"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        }
+        title4={"12-Minute Getting Through Today"}
+        item5={
+          <iframe
+            src="https://open.spotify.com/embed-podcast/episode/7eHgymS0ByRNefMKDhZrZa"
+            width="100%"
+            height="232"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        }
+        title5={"10-Minute Gratitude to Improve Your Mental Health"}
+      />
     </>
   );
 }
