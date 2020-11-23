@@ -1,0 +1,2 @@
+INSERT INTO meditations (user_id, link, name) VALUES (1, 'https://open.spotify.com/embed/track/17yh12hLaAtA8ZD5hH2pvp', '10-Minute Unguided Meditation');
+INSERT INTO meditations (user_id, link, name) VALUES (1, 'https://open.spotify.com/embed/track/7szVmfe3Y110CS9SHamWZH', '10-Minute Evening Stroll Meditation');
