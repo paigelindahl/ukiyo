@@ -1,5 +1,5 @@
 .bubble-container {
-  margin-top: 50px;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 15px;
@@ -29,6 +29,7 @@ h4.meditate-text{
   .yoga-icon {
     padding-top: 30px;
   }
+  padding-top: 100px
 }
 
 .two { 
@@ -41,8 +42,9 @@ h4.meditate-text{
     position: relative;
     bottom: 10px;
   }
-
+  padding-top: 40px
 }
+
 .three {
   background-color: #7BCDC8;
   border-radius: 15px;
@@ -53,6 +55,7 @@ h4.meditate-text{
     position: relative;
     bottom: 10px;
   }
+  padding-top: 40px
 }
 
 .four {
@@ -66,7 +69,7 @@ h4.meditate-text{
     top: 20px;
     right: 6px;
   }
-
+  padding-top: 100px
 }
 .five {
   border-radius: 15px;
@@ -79,8 +82,14 @@ h4.meditate-text{
     left: 50px;
     bottom: 30px;
   }
+  padding-top: 40px
 }
 
 .dashboard-title{
   text-decoration: none;
+}
+
+.item-title {
+  position: relative;
+  bottom: 50px;
 }

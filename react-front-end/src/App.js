@@ -7,6 +7,8 @@ import { JournalHappy } from './components/JournalHappy';
 import { CreateTask } from './components/CreateTask';
 import { LogoProfile } from './components/LogoProfile';
 import { Dashboard } from './components/Dashboard';
+import { Bubbles } from './components/Bubbles';
+import { Meditate } from './components/Meditate';
 import { 
   BrowserRouter as Router,
   Switch,
@@ -38,6 +40,7 @@ const App = function(){
           <Route path="/journal2" component={JournalHappy}/>
           <Route path="/createtask" component={CreateTask} />
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="/meditate" component={Meditate} />
         </div>
       </Router>
 
