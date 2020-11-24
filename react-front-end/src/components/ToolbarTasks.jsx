@@ -7,6 +7,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import {TasksPending} from './TasksPending'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -72,8 +73,8 @@ export function ToolbarTasks() {
           variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab label="Pending" {...a11yProps(0)} />
-          <Tab label="Completed" {...a11yProps(1)} />
+          <Tab style={{color: "#7BCDC8"}} label="Pending" {...a11yProps(0)} />
+          <Tab style={{color: "#7BCDC8"}} label="Completed" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -82,7 +83,7 @@ export function ToolbarTasks() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          Pending tasks here
+          <TasksPending/>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           Completed tasks here

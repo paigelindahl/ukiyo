@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { TopNav } from "./TopNav"
 import { ToolbarTasks } from "./ToolbarTasks"
-import { Checkboxes } from "./Checkboxes";
+import { AddTaskBtn } from "./AddTaskBtn"
 
 
 export function Tasks(props) {
@@ -11,7 +11,7 @@ export function Tasks(props) {
     <>
       <TopNav/>
       <ToolbarTasks />
-      <Checkboxes />
+      <AddTaskBtn />
     </>
   )
 }
