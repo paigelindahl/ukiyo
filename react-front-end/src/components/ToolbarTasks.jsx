@@ -45,9 +45,10 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 374
+    width: 374,
   }
 }));
+
 
 export function ToolbarTasks() {
   const classes = useStyles();
@@ -64,17 +65,18 @@ export function ToolbarTasks() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar position="static" color="default" style={{marginTop:"15px"}}>
         <Tabs
           value={value}
           onChange={handleChange}
-          indicatorColor="#FFDEA6"
-          textColor="#FFDEA6"
+          // indicatorColor="primary"
+          // textColor="primary"
+          style={{color:"#7BCDC8"}}
           variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab style={{color: "#7BCDC8"}} label="Pending"{...a11yProps(0)}/>
-          <Tab style={{color: "#7BCDC8"}} label="Completed" {...a11yProps(1)} />
+          <Tab label="Pending"{...a11yProps(0)}/>
+          <Tab label="Completed" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <SwipeableViews

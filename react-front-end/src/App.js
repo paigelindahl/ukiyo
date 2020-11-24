@@ -20,7 +20,6 @@ import {
 
 const App = function(){
 
-
   // fetchData = () => {
   //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
   //   .then((response) => {

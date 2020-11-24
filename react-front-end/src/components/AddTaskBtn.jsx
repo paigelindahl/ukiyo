@@ -20,7 +20,7 @@ export function AddTaskBtn() {
   return (
     <div className={classes.root}>
       <Fab
-        style={{ backgroundColor: "#7BCDC8", color: "#FFDEA6", marginTop: "50px" }}
+        style={{ backgroundColor: "#7BCDC8", color: "#FFDEA6", marginTop: "20px" }}
         aria-label="add"
       >
         <AddIcon />

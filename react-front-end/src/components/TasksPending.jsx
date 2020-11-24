@@ -1,4 +1,6 @@
-import React from "react";
+//
+
+import React, {useEffect, useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -13,6 +15,7 @@ import TableFooter from "@material-ui/core/TableHead";
 import DoneIcon from "@material-ui/icons/Done";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+
 
 const useStyles = makeStyles({
   table: {
@@ -34,6 +37,51 @@ const rows = [
 export function TasksPending() {
   const classes = useStyles();
 
+  const [tasks, setTasks] = useState([])
+  const [selectedId, setSelectedId] = useState([])
+
+  
+  
+  const getPending = async(event) => {
+
+    try {
+      // const body = { task, completed: false, user_id: 1 };
+     const response = await fetch("http://localhost:8080/taskspending") 
+     const jsonData = await response.json()
+
+     setTasks(jsonData);
+    } catch(err) {
+      console.error(err.message)
+    }
+  }
+
+  useEffect(() => {
+    getPending()
+  }, [tasks] );
+
+  const deleteTask = async() => {
+    try {
+      const deleteTask = await fetch (`http://localhost:3000/tasks/${selectedId}`, {
+        method: "DELETE"
+      });
+      setTasks(tasks.filter(todo => todo.id !== selectedId))
+      console.log(deleteTask)
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  // const editTask = async () => {
+
+  // }
+
+const colours = ["#F5A571", "#93A2ED", "#FFDEA6", "#7BCDC8"];
+const repeats = Math.ceil(tasks.length / colours.length);
+const newColours = Array.apply(null, {length: repeats * colours.length})
+  .map(function(e, i) {return colours[i % colours.length]});
+// const difference = newColours.length - tasks.length;
+// newColours.splice(0, difference);
+
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
@@ -47,19 +95,19 @@ export function TasksPending() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.cloud}>
+          {tasks.map((todo, index) => (
+            <TableRow key={todo.id}>
               <TableCell component="th" scope="row">
-                <FilterDramaIcon style={{ color: "#93A2ED" }} />
+                <FilterDramaIcon style={{ color: newColours[index] }} />
               </TableCell>
               <TableCell
                 align="center"
-                style={{ fontSize: "12px", width: "100%" }}
+                style={{ fontSize: "12px"}}
               >
-                {row.task}
+                {todo.task}
               </TableCell>
-              <TableCell style={{ width: "5px" }}>
-                <Checkboxes />
+              <TableCell>
+                <Checkboxes setSelectedId={setSelectedId} id={todo.id}/>
               </TableCell>
             </TableRow>
           ))}
@@ -69,7 +117,7 @@ export function TasksPending() {
             <TableCell align="center"></TableCell>
             <TableCell align="center">
               <DoneIcon style={{paddingRight: "15px"}}/>
-              <DeleteIcon/>
+              <DeleteIcon  onClick={deleteTask}/>
               <EditIcon style={{paddingLeft: "15px"}} />
             </TableCell>
             <TableCell align="center" ></TableCell>
