@@ -30,13 +30,14 @@ App.listen(PORT, () => {
 App.post("/tasks", async (req, res) => {
   const { task, completed, user_id } = req.body;
   console.log(typeof user_id);
+  console.log('are you hitting this?')
 
   try {
     const newTodo = await db.query(
       "INSERT INTO tasks(task, created_at, completed, user_id) VALUES($1, NOW(), $2, $3) RETURNING *",
       [task, completed, user_id]
     );
-    console.log("this is ressend", newTodo.rows[0]);
+    res.json({});
   } catch (err) {
     console.error(err.message);
   }
