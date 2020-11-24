@@ -53,6 +53,19 @@ App.get("/tasks", async (req, res) => {
   }
 });
 
+//get all incomplete tasks
+App.get("/taskspending", async (req, res) => {
+  try {
+    const pendingTodos = await db.query("SELECT * FROM tasks WHERE completed = false");
+    console.log('pendingTodos :', pendingTodos.rows);
+
+    res.json(pendingTodos.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+
 //get a single task
 App.get("/tasks/:id", async (req, res) => {
   try {
