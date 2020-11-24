@@ -10,7 +10,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import AddTaskBtn from './AddTaskBtn';
+import { AddTaskBtn } from './AddTaskBtn';
 
 const useStyles = makeStyles({
   list: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TemporaryDrawer() {
+export function AddTaskSlider() {
   const classes = useStyles();
   const [state, setState] = React.useState({
   
@@ -39,29 +39,31 @@ export default function TemporaryDrawer() {
 
   const list = (anchor) => (
     <div
-      className={clsx(classes.list, {
-        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+      className={clsx(classes.list.shape, {
+        [classes.fullList]: anchor === 'bottom',
       })}
       role="presentation"
-      // onClick={toggleDrawer(anchor, false)}
-      // onKeyDown={toggleDrawer(anchor, false)}
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
+        <h4>Create a new task</h4> 
         {<input></input>}
-        <AddTaskBtn onClose={toggleDrawer(anchor, false)}/>
+        <AddTaskBtn onClick={toggleDrawer(anchor, false)}/>
       </List>
       
     
     </div>
   );
-// onClose={toggleDrawer(anchor, false)}
+      // onClose={toggleDrawer(anchor, false)}
 
   return (
+
     <div>
       {['bottom'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-          <Drawer anchor={anchor} open={state[anchor]} >
+          <Button onClick={toggleDrawer(anchor, true)}><AddTaskBtn/></Button>
+          <Drawer anchor={anchor} open={state[anchor]}>
             {list(anchor)}
           </Drawer>
         </React.Fragment>

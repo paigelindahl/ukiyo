@@ -68,12 +68,12 @@ export function ToolbarTasks() {
         <Tabs
           value={value}
           onChange={handleChange}
-          indicatorColor="primary"
-          textColor="primary"
+          indicatorColor="#FFDEA6"
+          textColor="#FFDEA6"
           variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab style={{color: "#7BCDC8"}} label="Pending" {...a11yProps(0)} />
+          <Tab style={{color: "#7BCDC8"}} label="Pending"{...a11yProps(0)}/>
           <Tab style={{color: "#7BCDC8"}} label="Completed" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
