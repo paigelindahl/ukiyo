@@ -50,6 +50,7 @@ const dataFav = [ {
   link: "www.yoga.com"
 }]
 
+
 const colours = ["#7BCDC8", "#EBF6F5", "#FBE3E8", "#5CBDB9"];
 const repeats = Math.ceil(dataFav.length / colours.length);
 const newColours = Array.apply(null, {length: repeats * colours.length})
