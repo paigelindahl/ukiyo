@@ -27,23 +27,23 @@ App.listen(PORT, () => {
 });
 
 //add a task
-App.post("/dashboard", async (req, res) => {
-  const { task, created_at, completed, user_id } = req.body;
+App.post("/tasks", async (req, res) => {
+  const { task, completed, user_id } = req.body;
   console.log(typeof user_id);
 
   try {
     const newTodo = await db.query(
-      "INSERT INTO tasks(task, created_at, completed, user_id) VALUES($1, $2, $3, $4) RETURNING *",
-      [task, created_at, completed, user_id]
+      "INSERT INTO tasks(task, created_at, completed, user_id) VALUES($1, NOW(), $2, $3) RETURNING *",
+      [task, completed, user_id]
     );
     console.log("this is ressend", newTodo.rows[0]);
-  } catch (error) {
+  } catch (err) {
     console.error(err.message);
   }
 });
 
 //get all the tasks
-App.get("/dashboard", async (req, res) => {
+App.get("/tasks", async (req, res) => {
   try {
     const allTodos = await db.query("SELECT * FROM tasks");
     res.json(allTodos.rows);
@@ -53,7 +53,7 @@ App.get("/dashboard", async (req, res) => {
 });
 
 //get a single task
-App.get("/dashboard/:id", async (req, res) => {
+App.get("/tasks/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const singleTask = await db.query("SELECT * FROM tasks WHERE id = $1", [id]);
@@ -65,7 +65,7 @@ App.get("/dashboard/:id", async (req, res) => {
 });
 
 //delete a single task
-App.delete("/dashboard/:id", async (req, res) => {
+App.delete("/tasks/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const deleteTask = await db.query("DELETE FROM tasks WHERE id = $1", [id]);
@@ -79,7 +79,7 @@ App.delete("/dashboard/:id", async (req, res) => {
 
 
 //update a single task 
-App.put("/dashboard/:id", async (req, res) => {
+App.put("/tasks/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const {task} =  req.body;
