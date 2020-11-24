@@ -11,6 +11,7 @@ import { Bubbles } from './components/Bubbles';
 import { Yoga } from './components/Yoga';
 import { Meditate } from './components/Meditate';
 import { Favourites } from './components/Favourites';
+import { Tasks } from './components/Tasks';
 import { 
   BrowserRouter as Router,
   Route,
@@ -44,6 +45,7 @@ const App = function(){
           <Route path="/meditate" component={Meditate} />
           <Route path="/yoga" component={Yoga} />
           <Route path="/favourites" component={Favourites}/>
+          <Route path="/tasks" component={Tasks}/>
         </div>
       </Router>
 
