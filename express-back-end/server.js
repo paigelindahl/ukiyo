@@ -65,6 +65,18 @@ App.get("/taskspending", async (req, res) => {
   }
 });
 
+//get all complete tasks
+App.get("/taskscompleted", async (req, res) => {
+  try {
+    const completedTodos = await db.query("SELECT * FROM tasks WHERE completed = true");
+    console.log('completedTodos :', completedTodos.rows);
+
+    res.json(completedTodos.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
 
 //get a single task
 App.get("/tasks/:id", async (req, res) => {

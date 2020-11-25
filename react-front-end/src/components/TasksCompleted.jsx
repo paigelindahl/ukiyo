@@ -14,6 +14,7 @@ import DoneIcon from "@material-ui/icons/Done";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { EditModal } from "./EditModal";
 import './styles/TasksPending.scss'
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 
 const useStyles = makeStyles({
   table: {
@@ -32,55 +33,40 @@ const rows = [
   createData("Cloud", "Clean room", "checkbox"),
 ];
 
-export function TasksPending() {
+export function TasksCompleted() {
   const classes = useStyles();
 
-  const [tasks, setTasks] = useState([]);
-  const [selectedId, setSelectedId] = useState([]);
+  const [tasksCompleted, setTasksCompleted] = useState([]);
+  // const [selectedId, setSelectedId] = useState([]);
   
 
-  const getPending = async (event) => {
+  const getCompleted = async (event) => {
     try {
       // const body = { task, completed: false, user_id: 1 };
-      const response = await fetch("http://localhost:8080/taskspending");
+      const response = await fetch("http://localhost:8080/taskscompleted");
       const jsonData = await response.json();
+      console.log('jsonData :', jsonData);
 
-      setTasks(jsonData);
+      setTasksCompleted(jsonData);
+      console.log('this is tasks completed', tasksCompleted);
     } catch (err) {
       console.error(err.message);
     }
   };
+  
 
   useEffect(() => {
-    getPending();
-  }, [tasks]);
-
-  const deleteTask = async () => {
-    try {
-      const deleteTask = await fetch(
-        `http://localhost:3000/tasks/${selectedId}`,
-        {
-          method: "DELETE",
-        }
-      );
-      setTasks(tasks.filter((todo) => todo.id !== selectedId));
-      console.log(deleteTask);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
+    getCompleted();
+  }, []);
 
 
   const colours = ["#F5A571", "#93A2ED", "#FFDEA6", "#7BCDC8"];
-  const repeats = Math.ceil(tasks.length / colours.length);
+  const repeats = Math.ceil(tasksCompleted.length / colours.length);
   const newColours = Array.apply(null, {
     length: repeats * colours.length,
   }).map(function (e, i) {
     return colours[i % colours.length];
   });
-  // const difference = newColours.length - tasks.length;
-  // newColours.splice(0, difference);
 
   return (
     <TableContainer component={Paper}>
@@ -95,7 +81,7 @@ export function TasksPending() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {tasks.map((todo, index) => (
+          {tasksCompleted.map((todo, index) => (
             <TableRow key={todo.id}>
               <TableCell component="th" scope="row">
                 <FilterDramaIcon style={{ color: newColours[index] }} />
@@ -104,29 +90,12 @@ export function TasksPending() {
                 {todo.task}
               </TableCell>
               <TableCell>
-                <Checkboxes setSelectedId={setSelectedId} id={todo.id} />
+                <CheckBoxIcon style={{color:"#7BCDC8"}}/>
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
-        <TableFooter>
-          <TableRow>
-            <TableCell align="center"></TableCell>
-            <TableCell align="center" className="icons-style">
-              <DoneIcon style={{ paddingRight: "15px" }} />
-              <DeleteIcon onClick={deleteTask} />
-              <EditModal  selectedId={selectedId} style={{display: "inlineBlock"}}/>
-            </TableCell>
-            <TableCell align="center"></TableCell>
-          </TableRow>
-        </TableFooter>
       </Table>
     </TableContainer>
   );
-}
-
-{
-  /* <FilterDramaIcon style={{color: "#F5A571"}} />
-<FilterDramaIcon style={{color: "#FFDEA6"}} />
-<FilterDramaIcon style={{color: "#7BCDC8"}} /> */
 }

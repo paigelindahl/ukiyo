@@ -8,6 +8,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import {TasksPending} from './TasksPending'
+import { TasksCompleted } from './TasksCompleted'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -88,7 +89,7 @@ export function ToolbarTasks() {
           <TasksPending/>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          Completed tasks here
+          <TasksCompleted/>
         </TabPanel>
       </SwipeableViews>
     </div>
