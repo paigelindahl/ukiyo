@@ -8,11 +8,11 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import FilterDramaIcon from "@material-ui/icons/FilterDrama";
-import { Checkboxes } from "./Checkboxes";
-import TableFooter from "@material-ui/core/TableHead";
-import DoneIcon from "@material-ui/icons/Done";
-import DeleteIcon from "@material-ui/icons/Delete";
-import { EditModal } from "./EditModal";
+// import { Checkboxes } from "./Checkboxes";
+// import TableFooter from "@material-ui/core/TableHead";
+// import DoneIcon from "@material-ui/icons/Done";
+// import DeleteIcon from "@material-ui/icons/Delete";
+// import { EditModal } from "./EditModal";
 import './styles/TasksPending.scss'
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 
@@ -22,16 +22,16 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(cloud, task, checkmark) {
-  return { cloud, task, checkmark };
-}
+// function createData(cloud, task, checkmark) {
+//   return { cloud, task, checkmark };
+// }
 
-const rows = [
-  createData("Cloud", "Clean room hello to morrow today", "checkbox"),
-  createData("Cloud", "I need to clean my room", "checkbox"),
-  createData("Cloud", "Clean room", "checkbox"),
-  createData("Cloud", "Clean room", "checkbox"),
-];
+// const rows = [
+//   createData("Cloud", "Clean room hello to morrow today", "checkbox"),
+//   createData("Cloud", "I need to clean my room", "checkbox"),
+//   createData("Cloud", "Clean room", "checkbox"),
+//   createData("Cloud", "Clean room", "checkbox"),
+// ];
 
 export function TasksCompleted() {
   const classes = useStyles();
@@ -48,7 +48,6 @@ export function TasksCompleted() {
       console.log('jsonData :', jsonData);
 
       setTasksCompleted(jsonData);
-      console.log('this is tasks completed', tasksCompleted);
     } catch (err) {
       console.error(err.message);
     }

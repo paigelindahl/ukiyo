@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
 import './App.css';
 import { MainPage } from './components/MainPage';
 import { JournalSad } from './components/JournalSad';
@@ -7,15 +6,13 @@ import { JournalHappy } from './components/JournalHappy';
 import { CreateTask } from './components/CreateTask';
 import { LogoProfile } from './components/LogoProfile';
 import { Dashboard } from './components/Dashboard';
-import { Bubbles } from './components/Bubbles';
 import { Yoga } from './components/Yoga';
 import { Meditate } from './components/Meditate';
 import { Favourites } from './components/Favourites';
 import { Tasks } from './components/Tasks';
 import { 
   BrowserRouter as Router,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 const App = function(){

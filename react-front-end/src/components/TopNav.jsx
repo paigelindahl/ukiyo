@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-import { emphasize, withStyles } from "@material-ui/core/styles";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
+import React from "react";
+import { withStyles } from "@material-ui/core/styles";
 import Chip from "@material-ui/core/Chip";
-import HomeIcon from "@material-ui/icons/Home";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+// import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
-import { Yoga } from "./Yoga";
+// import { Yoga } from "./Yoga";
 import { Link } from "react-router-dom";
 
 const theme = createMuiTheme({

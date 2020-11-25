@@ -5,7 +5,6 @@ export function Checkboxes(props) {
   const [checked, setChecked] = React.useState(true);
 
   const handleChange = (event) => {
-    console.log('this is checked', checked)
     setChecked(event.target.checked);
   };
   
@@ -20,7 +19,7 @@ export function Checkboxes(props) {
       <Checkbox
         onClick={handleSetSelectedId}
         onChange={handleChange}
-        defaultunchecked
+        defaultunchecked="true"
         style={{color:"#7BCDC8"}}
         inputProps={{ 'aria-label': 'checkbox with default color' }}
       />

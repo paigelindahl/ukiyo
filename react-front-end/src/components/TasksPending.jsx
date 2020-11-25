@@ -21,16 +21,16 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(cloud, task, checkmark) {
-  return { cloud, task, checkmark };
-}
+// function createData(cloud, task, checkmark) {
+//   return { cloud, task, checkmark };
+// }
 
-const rows = [
-  createData("Cloud", "Clean room hello to morrow today", "checkbox"),
-  createData("Cloud", "I need to clean my room", "checkbox"),
-  createData("Cloud", "Clean room", "checkbox"),
-  createData("Cloud", "Clean room", "checkbox"),
-];
+// const rows = [
+//   createData("Cloud", "Clean room hello to morrow today", "checkbox"),
+//   createData("Cloud", "I need to clean my room", "checkbox"),
+//   createData("Cloud", "Clean room", "checkbox"),
+//   createData("Cloud", "Clean room", "checkbox"),
+// ];
 
 export function TasksPending() {
   const classes = useStyles();
@@ -53,11 +53,14 @@ export function TasksPending() {
 
   useEffect(() => {
     getPending();
+  
   }, []);
+
+  console.log('tasks', tasks);
 
   const deleteTask = async () => {
     try {
-      const deleteATask = await fetch(
+      await fetch(
         `http://localhost:8080/tasks/${selectedId}`,
         {
           method: "DELETE",
@@ -72,7 +75,7 @@ export function TasksPending() {
   const moveTask = async () => {
     console.log('this is selected id', selectedId);
     try {
-      const moveATask = await fetch(
+      await fetch(
         `http://localhost:8080/taskscompleted/${selectedId}`,
         {
           method: "PUT",
@@ -131,7 +134,7 @@ export function TasksPending() {
             <TableCell align="center" className="icons-style">
               <DoneIcon onClick={moveTask} selectedId={selectedId} style={{ paddingRight: "15px" }} />
               <DeleteIcon onClick={deleteTask} />
-              <EditModal onClick={getPending} selectedId={selectedId} style={{display: "inlineBlock"}}/>
+              <EditModal setTasks={setTasks} selectedId={selectedId} style={{display: "inlineBlock"}}/>
             </TableCell>
             <TableCell align="center"></TableCell>
           </TableRow>
@@ -141,8 +144,3 @@ export function TasksPending() {
   );
 }
 
-{
-  /* <FilterDramaIcon style={{color: "#F5A571"}} />
-<FilterDramaIcon style={{color: "#FFDEA6"}} />
-<FilterDramaIcon style={{color: "#7BCDC8"}} /> */
-}

@@ -23,7 +23,7 @@ export function EditModal(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [editContent, setEditContent] = useState("");
-  
+
   useEffect(() => {
     onEditClick();
   }, []);
@@ -35,7 +35,6 @@ export function EditModal(props) {
       );
       const jsonData = await editTask.json();
       setEditContent(jsonData.task);
-      // setTasks(tasks.filter((todo) => todo.id !== selectedId));
       console.log("this is json", jsonData.task);
     } catch (err) {
       console.error(err);
@@ -44,19 +43,27 @@ export function EditModal(props) {
 
   const putEdit = async () => {
     const task = editContent;
-    const body = { task }
+    const body = { task };
     try {
-      const putEditContent = await fetch (`http://localhost:3000/tasks/${props.selectedId}`,
-      {
+      await fetch(`http://localhost:3000/tasks/${props.selectedId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body)
-      }
-      )
+        body: JSON.stringify(body),
+      });
     } catch (err) {
-      console.error(err.message)
+      console.error(err.message);
     }
-  }
+    // console.log('this is tasks seelcted id', props.tasks[props.selectedId]);
+    props.setTasks((prev) => {
+      const newArray = [...prev];
+      const updatedTask = newArray.find((task) => (task.id = props.selectedId));
+      if (updatedTask) {
+        updatedTask.task = editContent;
+      }
+      // ...tasks, tasks[selectedId].task = editContent);
+      return newArray;
+    });
+  };
 
   const handleOpen = () => {
     setOpen(true);
@@ -64,11 +71,14 @@ export function EditModal(props) {
 
   const handleClose = () => {
     setOpen(false);
+    console.log("this is tasks", props.tasks);
+    console.log("this is selectedId", props.selectedId);
   };
 
   const handleChange = function (event) {
-    setEditContent(event.target.value)
-  }
+    setEditContent(event.target.value);
+    // setTasks(...tasks, event.target.value)
+  };
 
   return (
     <div>
@@ -78,8 +88,8 @@ export function EditModal(props) {
         onClick={() => {
           handleOpen();
           onEditClick();
-        }}>
-        </EditIcon>
+        }}
+      ></EditIcon>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -96,10 +106,14 @@ export function EditModal(props) {
           <div className={classes.paper}>
             <h2 id="transition-modal-title">Edit task</h2>
             <input type="text" value={editContent} onChange={handleChange} />
-            <button onClick={(e) => {
-          putEdit(e);
-          handleClose();
-        }}>OK</button>
+            <button
+              onClick={(e) => {
+                putEdit(e);
+                handleClose();
+              }}
+            >
+              OK
+            </button>
           </div>
         </Fade>
       </Modal>

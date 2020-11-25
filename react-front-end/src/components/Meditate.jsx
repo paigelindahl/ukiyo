@@ -15,6 +15,7 @@ export function Meditate(props) {
             frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
+            title="1"
           ></iframe>
         }
         title1={"10-Minute Unguided Meditation"}
@@ -26,6 +27,7 @@ export function Meditate(props) {
             frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
+            title="2"
           ></iframe>
         }
         title2={"10-Minute Evening Stroll Meditation"}
@@ -37,6 +39,7 @@ export function Meditate(props) {
             frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
+            title="3"
           ></iframe>
         }
         title3={"5-Minute Guided Meditation"}
@@ -48,6 +51,7 @@ export function Meditate(props) {
             frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
+            title="4"
           ></iframe>
         }
         title4={"10-Minute Guided Meditation"}
@@ -59,6 +63,7 @@ export function Meditate(props) {
             frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
+            title="5"
           ></iframe>
         }
         title5={"10-Minute Choosing Positivity"}
@@ -72,6 +77,7 @@ export function Meditate(props) {
             frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
+            title="6"
           ></iframe>
         }
         title1={"12-Minute Focusing When Stressed"}
@@ -83,6 +89,7 @@ export function Meditate(props) {
             frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
+            title="7"
           ></iframe>
         }
         title2={"9-Minute Self Care to Start Your Day"}
@@ -94,6 +101,7 @@ export function Meditate(props) {
             frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
+            title="8"
           ></iframe>
         }
         title3={"11-Minute Be Here Now"}
@@ -105,6 +113,7 @@ export function Meditate(props) {
             frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
+            title="9"
           ></iframe>
         }
         title4={"12-Minute Getting Through Today"}
@@ -116,6 +125,7 @@ export function Meditate(props) {
             frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
+            title="10"
           ></iframe>
         }
         title5={"10-Minute Gratitude to Improve Your Mental Health"}

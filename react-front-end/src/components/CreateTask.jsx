@@ -1,5 +1,4 @@
 import React from "react";
-import { LogoProfile } from "./LogoProfile";
 import "./styles/JournalTitle.scss";
 import { TaskInput } from "./TaskInput";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
@@ -12,7 +11,7 @@ export function CreateTask(props) {
     try {
       const body = { task, completed: false, user_id: 1 };
 
-     const response = await fetch("http://localhost:8080/tasks", {
+     await fetch("http://localhost:8080/tasks", {
        method: "POST",
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify(body)

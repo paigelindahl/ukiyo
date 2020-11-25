@@ -16,6 +16,7 @@ export function Yoga(props) {
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
+          title="1"
         ></iframe>
       }
       title1={"Vinyasa Flow Yoga (20min)"}
@@ -27,6 +28,7 @@ export function Yoga(props) {
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
+          title="2"
         ></iframe>
       }
       title2={"Full Body Vinyasa Flow (30min)"}
@@ -38,6 +40,7 @@ export function Yoga(props) {
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
+          title="3"
         ></iframe>
       }
       title3={
@@ -51,6 +54,7 @@ export function Yoga(props) {
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
+          title="4"
         ></iframe>
       }
       title4={"Full Body Yoga (20min)"}
@@ -62,6 +66,7 @@ export function Yoga(props) {
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
+          title="5"
         ></iframe>
       }
       title5={"Vinyasa Flow Yoga(45 min)"}
@@ -75,6 +80,7 @@ export function Yoga(props) {
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
+          title="6"
         ></iframe>
       }
       title1={"Vinyasa Flow Yoga(20min)"}
@@ -86,6 +92,7 @@ export function Yoga(props) {
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
+          title="7"
         ></iframe>
       }
       title2={"Full Body Vinyasa Flow (30min)"}
@@ -97,6 +104,7 @@ export function Yoga(props) {
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
+          title="8"
         ></iframe>
       }
       title3={
@@ -110,6 +118,7 @@ export function Yoga(props) {
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
+          title="9"
         ></iframe>
       }
       title4={"Full Body Yoga (20min)"}
@@ -121,6 +130,7 @@ export function Yoga(props) {
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
+          title="10"
         ></iframe>
       }
       title5={"Vinyasa Flow Yoga (45min)"}
