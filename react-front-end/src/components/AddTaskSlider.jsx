@@ -12,14 +12,27 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { AddTaskBtn } from './AddTaskBtn';
 
-const useStyles = makeStyles({
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     '& > *': {
+//       margin: theme.spacing(1),
+//     },
+//   },
+// }));
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
   list: {
     width: 250,
   },
   fullList: {
     width: 'auto',
   },
-});
+}));
 
 export function AddTaskSlider() {
   const classes = useStyles();
@@ -33,9 +46,13 @@ export function AddTaskSlider() {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-
-    setState({ ...state, [anchor]: open });
+  console.log('are we here?')
+    setState({  ...state, [anchor]: open });
   };
+
+  const closeDrawer = (anchor, open) => {
+    setState({...state, [anchor]: false})
+  }
 
   const list = (anchor) => (
     <div
@@ -43,16 +60,16 @@ export function AddTaskSlider() {
         [classes.fullList]: anchor === 'bottom',
       })}
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      // onClick={toggleDrawer(anchor, false)}
+      // onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
         <h4>Create a new task</h4> 
         {<input></input>}
-        <AddTaskBtn onClick={toggleDrawer(anchor, false)}/>
+        <Button variant="outlined" onClick={toggleDrawer(anchor, false)}>Primary</Button>
+        {/* <button >ADD</button> */}
       </List>
-      
-    
+     
     </div>
   );
       // onClose={toggleDrawer(anchor, false)}
