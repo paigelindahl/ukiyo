@@ -1,6 +1,6 @@
 //
 
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -13,9 +13,9 @@ import FilterDramaIcon from "@material-ui/icons/FilterDrama";
 import { Checkboxes } from "./Checkboxes";
 import TableFooter from "@material-ui/core/TableHead";
 import DoneIcon from "@material-ui/icons/Done";
-import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
-
+import EditModal from "./EditModal";
+import './styles/TasksPending.scss'
 
 const useStyles = makeStyles({
   table: {
@@ -37,50 +37,55 @@ const rows = [
 export function TasksPending() {
   const classes = useStyles();
 
-  const [tasks, setTasks] = useState([])
-  const [selectedId, setSelectedId] = useState([])
+  const [tasks, setTasks] = useState([]);
+  const [selectedId, setSelectedId] = useState([]);
 
-  
-  
-  const getPending = async(event) => {
-
+  const getPending = async (event) => {
     try {
       // const body = { task, completed: false, user_id: 1 };
-     const response = await fetch("http://localhost:8080/taskspending") 
-     const jsonData = await response.json()
+      const response = await fetch("http://localhost:8080/taskspending");
+      const jsonData = await response.json();
 
-     setTasks(jsonData);
-    } catch(err) {
-      console.error(err.message)
+      setTasks(jsonData);
+    } catch (err) {
+      console.error(err.message);
     }
-  }
+  };
 
   useEffect(() => {
-    getPending()
-  }, [tasks] );
+    getPending();
+  }, [tasks]);
 
-  const deleteTask = async() => {
+  const deleteTask = async () => {
     try {
-      const deleteTask = await fetch (`http://localhost:3000/tasks/${selectedId}`, {
-        method: "DELETE"
-      });
-      setTasks(tasks.filter(todo => todo.id !== selectedId))
-      console.log(deleteTask)
+      const deleteTask = await fetch(
+        `http://localhost:3000/tasks/${selectedId}`,
+        {
+          method: "DELETE",
+        }
+      );
+      setTasks(tasks.filter((todo) => todo.id !== selectedId));
+      console.log(deleteTask);
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
-  }
+  };
 
   // const editTask = async () => {
+  //   <>
 
+  //   </>
   // }
 
-const colours = ["#F5A571", "#93A2ED", "#FFDEA6", "#7BCDC8"];
-const repeats = Math.ceil(tasks.length / colours.length);
-const newColours = Array.apply(null, {length: repeats * colours.length})
-  .map(function(e, i) {return colours[i % colours.length]});
-// const difference = newColours.length - tasks.length;
-// newColours.splice(0, difference);
+  const colours = ["#F5A571", "#93A2ED", "#FFDEA6", "#7BCDC8"];
+  const repeats = Math.ceil(tasks.length / colours.length);
+  const newColours = Array.apply(null, {
+    length: repeats * colours.length,
+  }).map(function (e, i) {
+    return colours[i % colours.length];
+  });
+  // const difference = newColours.length - tasks.length;
+  // newColours.splice(0, difference);
 
   return (
     <TableContainer component={Paper}>
@@ -100,14 +105,11 @@ const newColours = Array.apply(null, {length: repeats * colours.length})
               <TableCell component="th" scope="row">
                 <FilterDramaIcon style={{ color: newColours[index] }} />
               </TableCell>
-              <TableCell
-                align="center"
-                style={{ fontSize: "12px"}}
-              >
+              <TableCell align="center" style={{ fontSize: "12px" }}>
                 {todo.task}
               </TableCell>
               <TableCell>
-                <Checkboxes setSelectedId={setSelectedId} id={todo.id}/>
+                <Checkboxes setSelectedId={setSelectedId} id={todo.id} />
               </TableCell>
             </TableRow>
           ))}
@@ -115,12 +117,12 @@ const newColours = Array.apply(null, {length: repeats * colours.length})
         <TableFooter>
           <TableRow>
             <TableCell align="center"></TableCell>
-            <TableCell align="center">
-              <DoneIcon style={{paddingRight: "15px"}}/>
-              <DeleteIcon  onClick={deleteTask}/>
-              <EditIcon style={{paddingLeft: "15px"}} />
+            <TableCell align="center" className="icons-style">
+              <DoneIcon style={{ paddingRight: "15px" }} />
+              <DeleteIcon onClick={deleteTask} />
+              <EditModal style={{display: "inlineBlock"}}/>
             </TableCell>
-            <TableCell align="center" ></TableCell>
+            <TableCell align="center"></TableCell>
           </TableRow>
         </TableFooter>
       </Table>
