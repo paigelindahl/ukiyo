@@ -72,7 +72,7 @@ App.get("/tasks/:id", async (req, res) => {
     const { id } = req.params;
     const singleTask = await db.query("SELECT * FROM tasks WHERE id = $1", [id]);
 
-    res.json(singleTask.rows)
+    res.json(singleTask.rows[0])
   } catch (err) {
     console.error(err.message);
   }
@@ -97,7 +97,7 @@ App.put("/tasks/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const {task} =  req.body;
-    const updateTask = await db.query("UPDATE tasks SET task=$1 WHERE id = $2", [task, id]);
+    const updateTask = await db.query("UPDATE tasks SET task = $1 WHERE id = $2", [task, id]);
 
     res.json('it was update')
 

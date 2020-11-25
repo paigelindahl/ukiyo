@@ -14,7 +14,7 @@ import { Checkboxes } from "./Checkboxes";
 import TableFooter from "@material-ui/core/TableHead";
 import DoneIcon from "@material-ui/icons/Done";
 import DeleteIcon from "@material-ui/icons/Delete";
-import EditModal from "./EditModal";
+import { EditModal } from "./EditModal";
 import './styles/TasksPending.scss'
 
 const useStyles = makeStyles({
@@ -39,6 +39,7 @@ export function TasksPending() {
 
   const [tasks, setTasks] = useState([]);
   const [selectedId, setSelectedId] = useState([]);
+  
 
   const getPending = async (event) => {
     try {
@@ -71,11 +72,7 @@ export function TasksPending() {
     }
   };
 
-  // const editTask = async () => {
-  //   <>
 
-  //   </>
-  // }
 
   const colours = ["#F5A571", "#93A2ED", "#FFDEA6", "#7BCDC8"];
   const repeats = Math.ceil(tasks.length / colours.length);
@@ -120,7 +117,7 @@ export function TasksPending() {
             <TableCell align="center" className="icons-style">
               <DoneIcon style={{ paddingRight: "15px" }} />
               <DeleteIcon onClick={deleteTask} />
-              <EditModal style={{display: "inlineBlock"}}/>
+              <EditModal  selectedId={selectedId} style={{display: "inlineBlock"}}/>
             </TableCell>
             <TableCell align="center"></TableCell>
           </TableRow>

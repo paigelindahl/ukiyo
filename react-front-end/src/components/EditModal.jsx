@@ -1,27 +1,62 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+import React, { useState, useEffect } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
 import EditIcon from "@material-ui/icons/Edit";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
 }));
 
-export default function TransitionsModal() {
+export function EditModal(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [editContent, setEditContent] = useState("");
+  
+  useEffect(() => {
+    onEditClick();
+  }, []);
+
+  const onEditClick = async () => {
+    try {
+      const editTask = await fetch(
+        `http://localhost:3000/tasks/${props.selectedId}`
+      );
+      const jsonData = await editTask.json();
+      setEditContent(jsonData.task);
+      // setTasks(tasks.filter((todo) => todo.id !== selectedId));
+      console.log("this is json", jsonData.task);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const putEdit = async () => {
+    const task = editContent;
+    const body = { task }
+    try {
+      const putEditContent = await fetch (`http://localhost:3000/tasks/${props.selectedId}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      }
+      )
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
 
   const handleOpen = () => {
     setOpen(true);
@@ -31,12 +66,20 @@ export default function TransitionsModal() {
     setOpen(false);
   };
 
+  const handleChange = function (event) {
+    setEditContent(event.target.value)
+  }
+
   return (
     <div>
       {/* <button type="button" onClick={handleOpen}> */}
-      
-        <EditIcon style={{paddingLeft: "15px"}} onClick={handleOpen}/>
-      {/* </button> */}
+      <EditIcon
+        style={{ paddingLeft: "15px" }}
+        onClick={() => {
+          handleOpen();
+          onEditClick();
+        }}>
+        </EditIcon>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -51,8 +94,12 @@ export default function TransitionsModal() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">Transition modal</h2>
-            <p id="transition-modal-description">react-transition-group animates me.</p>
+            <h2 id="transition-modal-title">Edit task</h2>
+            <input type="text" value={editContent} onChange={handleChange} />
+            <button onClick={(e) => {
+          putEdit(e);
+          handleClose();
+        }}>OK</button>
           </div>
         </Fade>
       </Modal>

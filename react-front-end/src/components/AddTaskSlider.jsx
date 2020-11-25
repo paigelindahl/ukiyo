@@ -12,14 +12,6 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { AddTaskBtn } from './AddTaskBtn';
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     '& > *': {
-//       margin: theme.spacing(1),
-//     },
-//   },
-// }));
-
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -46,13 +38,9 @@ export function AddTaskSlider() {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-  console.log('are we here?')
     setState({  ...state, [anchor]: open });
   };
 
-  const closeDrawer = (anchor, open) => {
-    setState({...state, [anchor]: false})
-  }
 
   const list = (anchor) => (
     <div
