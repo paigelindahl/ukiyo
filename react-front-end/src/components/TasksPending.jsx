@@ -53,22 +53,38 @@ export function TasksPending() {
 
   useEffect(() => {
     getPending();
-  }, [tasks]);
+  }, []);
 
   const deleteTask = async () => {
     try {
-      const deleteTask = await fetch(
-        `http://localhost:3000/tasks/${selectedId}`,
+      const deleteATask = await fetch(
+        `http://localhost:8080/tasks/${selectedId}`,
         {
           method: "DELETE",
         }
       );
       setTasks(tasks.filter((todo) => todo.id !== selectedId));
-      console.log(deleteTask);
     } catch (err) {
       console.error(err);
     }
   };
+
+  const moveTask = async () => {
+    console.log('this is selected id', selectedId);
+    try {
+      const moveATask = await fetch(
+        `http://localhost:8080/taskscompleted/${selectedId}`,
+        {
+          method: "PUT",
+          // headers: { "Content-Type": "application/json" },
+          // // body: JSON.stringify(body)
+        }
+        ) 
+        setTasks(tasks.filter((todo) => todo.id !== selectedId));
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
 
 
@@ -113,9 +129,9 @@ export function TasksPending() {
           <TableRow>
             <TableCell align="center"></TableCell>
             <TableCell align="center" className="icons-style">
-              <DoneIcon style={{ paddingRight: "15px" }} />
+              <DoneIcon onClick={moveTask} selectedId={selectedId} style={{ paddingRight: "15px" }} />
               <DeleteIcon onClick={deleteTask} />
-              <EditModal  selectedId={selectedId} style={{display: "inlineBlock"}}/>
+              <EditModal onClick={getPending} selectedId={selectedId} style={{display: "inlineBlock"}}/>
             </TableCell>
             <TableCell align="center"></TableCell>
           </TableRow>

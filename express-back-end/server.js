@@ -118,6 +118,19 @@ App.put("/tasks/:id", async (req, res) => {
   }
 });
 
+//update a single task to completed from incomplete 
+App.put("/taskscompleted/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updateTask = await db.query("UPDATE tasks SET completed = true WHERE id = $1", [id]);
+
+    res.json('it was changed to completed')
+
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
 // {
 //   "task": "post and get",
 //   "created_at": "2020-10-10T15:23:25.000Z",
