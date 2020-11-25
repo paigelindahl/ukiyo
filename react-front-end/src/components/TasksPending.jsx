@@ -56,7 +56,6 @@ export function TasksPending() {
   
   }, []);
 
-  console.log('tasks', tasks);
 
   const deleteTask = async () => {
     try {
@@ -73,7 +72,6 @@ export function TasksPending() {
   };
 
   const moveTask = async () => {
-    console.log('this is selected id', selectedId);
     try {
       await fetch(
         `http://localhost:8080/taskscompleted/${selectedId}`,

@@ -34,7 +34,8 @@ const StyledBreadcrumb = withStyles((theme) => ({
 }))(Chip); // TypeScript only: need a type cast here because https://github.com/Microsoft/TypeScript/issues/26591
 
 function handleClick(event) {
-  console.log("event", event.target);
+  // event.preventDefault();
+  // console.log("event", event.target);
 }
 
 export function TopNav() {

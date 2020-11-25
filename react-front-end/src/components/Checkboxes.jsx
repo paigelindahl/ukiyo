@@ -11,7 +11,6 @@ export function Checkboxes(props) {
 
   const handleSetSelectedId = (event) => {
     props.setSelectedId(props.id);
-    // console.log('this is key', props.id)
   };
 
   return (

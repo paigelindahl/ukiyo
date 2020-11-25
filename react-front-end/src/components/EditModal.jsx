@@ -35,7 +35,6 @@ export function EditModal(props) {
       );
       const jsonData = await editTask.json();
       setEditContent(jsonData.task);
-      console.log("this is json", jsonData.task);
     } catch (err) {
       console.error(err);
     }
@@ -53,14 +52,12 @@ export function EditModal(props) {
     } catch (err) {
       console.error(err.message);
     }
-    // console.log('this is tasks seelcted id', props.tasks[props.selectedId]);
     props.setTasks((prev) => {
       const newArray = [...prev];
       const updatedTask = newArray.find((task) => (task.id = props.selectedId));
       if (updatedTask) {
         updatedTask.task = editContent;
       }
-      // ...tasks, tasks[selectedId].task = editContent);
       return newArray;
     });
   };
@@ -71,13 +68,10 @@ export function EditModal(props) {
 
   const handleClose = () => {
     setOpen(false);
-    console.log("this is tasks", props.tasks);
-    console.log("this is selectedId", props.selectedId);
   };
 
   const handleChange = function (event) {
     setEditContent(event.target.value);
-    // setTasks(...tasks, event.target.value)
   };
 
   return (

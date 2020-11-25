@@ -6,7 +6,7 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 export function CreateTask(props) {
   const [task, setTask] = React.useState("");
 
-  const onSubmit = async(event) => {
+  const onSubmit = async() => {
 
     try {
       const body = { task, completed: false, user_id: 1 };
@@ -22,20 +22,6 @@ export function CreateTask(props) {
       console.error(err.message)
     }
   }
-
-  // const onSubmit = (event) => {
-  //   const body = { task, completed: false, user_id: 1 };
-  //   fetch("http://localhost:8080/tasks", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(body),
-  //   }).then(() => {
-  //     console.log('sanity check')
-  //   })
-  //   .catch((err) => {
-  //     console.log('error', err);
-  //   })
-  // };
 
   return (
     <>
