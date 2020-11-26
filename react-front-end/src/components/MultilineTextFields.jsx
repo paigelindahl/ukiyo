@@ -15,9 +15,6 @@ const useStyles = makeStyles((theme) => ({
 export default function MultilineTextFields(props) {
   const classes = useStyles();
   const [response, setResponse] = useState('');
-  // const [answers, setAnswers] = useState([]);
-  // console.log('response', response);
-  // console.log('props', props);
 
   const handleChange = (event) => {
     setResponse(event.target.value);
