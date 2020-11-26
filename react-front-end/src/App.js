@@ -10,6 +10,7 @@ import { Yoga } from './components/Yoga';
 import { Meditate } from './components/Meditate';
 import { Favourites } from './components/Favourites';
 import { Tasks } from './components/Tasks';
+import { JournalEntries } from './components/JournalEntries';
 import { 
   BrowserRouter as Router,
   Route
@@ -42,6 +43,7 @@ const App = function(){
           <Route path="/yoga" component={Yoga} />
           <Route path="/favourites" component={Favourites}/>
           <Route path="/tasks" component={Tasks}/>
+          <Route path="/journalentries" component={JournalEntries} />
         </div>
       </Router>
 

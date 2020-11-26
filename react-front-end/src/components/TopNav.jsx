@@ -50,7 +50,6 @@ export function TopNav() {
           />
         </Link>
         <Link to="/yoga" style={{ textDecoration: "none" }}>
-          {" "}
           <StyledBreadcrumb component="a" label="Yoga" onClick={handleClick} />
         </Link>
         <StyledBreadcrumb
@@ -59,12 +58,14 @@ export function TopNav() {
           label="Tasks"
           onClick={handleClick}
         />
+        <Link to="/journalentries" style={{ textDecoration: "none" }}>
         <StyledBreadcrumb
           component="a"
           href="#"
           label="Journal"
           onClick={handleClick}
         />
+        </Link>
         <Link to="/favourites" style={{ textDecoration: "none" }}>
           <StyledBreadcrumb
             component="a"
