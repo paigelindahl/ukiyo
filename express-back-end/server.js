@@ -174,7 +174,7 @@ App.post("/journal1", async (req, res) => {
   const { answerOne, answerTwo, answerThree } = req.body;
   try {
     const sadAnswer = await db.query(
-      "INSERT INTO journal_entries(user_id, created_at, answer_one, answer_two, answer_three, result) VALUES(1, NOW(), $1, $2, $3, false) RETURNING *",
+      "INSERT INTO journal_entries(user_id, answer_one, answer_two, answer_three, result) VALUES(1, $1, $2, $3, false) RETURNING *",
       [answerOne, answerTwo, answerThree]
     );
     res.json({});
@@ -188,11 +188,26 @@ App.post("/journal2", async (req, res) => {
   const { answerOne, answerTwo, answerThree } = req.body;
   try {
     const sadAnswer = await db.query(
-      "INSERT INTO journal_entries(user_id, created_at, answer_one, answer_two, answer_three, result) VALUES(1, NOW(), $1, $2, $3, true) RETURNING *",
+      "INSERT INTO journal_entries(user_id, answer_one, answer_two, answer_three, result) VALUES(1, $1, $2, $3, true) RETURNING *",
       [answerOne, answerTwo, answerThree]
     );
     res.json({})
   } catch (error) {
     console.log(error.message)
+  }
+});
+
+
+//get journal entries by day
+App.get("/tasks/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const singleTask = await db.query("SELECT * FROM tasks WHERE id = $1", [
+      id,
+    ]);
+
+    res.json(singleTask.rows[0]);
+  } catch (err) {
+    console.error(err.message);
   }
 });
