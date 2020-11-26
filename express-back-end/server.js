@@ -131,9 +131,32 @@ App.put("/taskscompleted/:id", async (req, res) => {
   }
 });
 
-// {
-//   "task": "post and get",
-//   "created_at": "2020-10-10T15:23:25.000Z",
-//   "completed": false,
-//   "user_id": 1
-// }
+//ADD YOGA YOUTUBE VIA FAVORITE BUTTON
+
+App.post("/yoga", async (req, res) => {
+  const { title, urlSource } = req.body
+  try {
+    const newFavourite = await db.query(
+      "INSERT INTO workouts(name, link, user_id) VALUES($1, $2, 1) RETURNING *",
+      [title, urlSource]
+      );
+      res.json({})
+  } catch (error) {
+    console.error(error.message)
+  }
+});
+
+//ADD MEDITATE SPOTIFY VIA FAVORITE BUTTON
+
+App.post("/meditate", async (req, res) => {
+  const { title, urlSource } = req.body
+  try {
+    const newFavourite = await db.query(
+      "INSERT INTO meditations(user_id, link, name) VALUES(1, $2, $1) RETURNING *",
+      [title, urlSource]
+      );
+      res.json({})
+  } catch (error) {
+    console.error(error.message)
+  }
+});

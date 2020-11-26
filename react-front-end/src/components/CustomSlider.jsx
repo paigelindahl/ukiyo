@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
@@ -10,8 +10,6 @@ import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfie
 import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissatisfied";
 import SentimentSatisfiedIcon from '@material-ui/icons/SentimentSatisfied';
 import "./styles/CustomSlider.scss";
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,6 +28,7 @@ const theme = createMuiTheme({
 
 function ValueLabelComponent(props) {
   const { children, open, value } = props;
+  // props.setSliderValue(value);
   return (
     <Tooltip open={open} enterTouchDelay={0} placement="top" title={value}>
       {children}
@@ -41,19 +40,23 @@ ValueLabelComponent.propTypes = {
   children: PropTypes.element.isRequired,
   open: PropTypes.bool.isRequired,
   value: PropTypes.number.isRequired,
+  
 };
 
-export function CustomSlider() {
-  const classes = useStyles();
 
+
+export function CustomSlider(props) {
+  const classes = useStyles();
+  // console.log('this is value', value);
   return (
     <>
       <Grid container justify="center">
         <div className={classes.root}>
           <ThemeProvider theme={theme}>
             <Slider
-              defaultValue={10}
+              defaultValue={50}
               ValueLabelComponent={ValueLabelComponent}
+              onChange={(event, value) => props.setSliderValue(value)}
               aria-label="custom thumb label"
             />
           </ThemeProvider>
@@ -64,7 +67,6 @@ export function CustomSlider() {
           </div>
         </div>
       </Grid>
-      <Link className="link" to='/journal1'><ArrowForwardIosIcon fontSize="large"/></Link>
     </>
   );
 }
