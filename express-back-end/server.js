@@ -73,7 +73,7 @@ App.get("/taskscompleted", async (req, res) => {
     const completedTodos = await db.query(
       "SELECT * FROM tasks WHERE completed = true"
     );
-    console.log("completedTodos :", completedTodos.rows);
+    // console.log("completedTodos :", completedTodos.rows);
 
     res.json(completedTodos.rows);
   } catch (err) {
@@ -199,14 +199,12 @@ App.post("/journal2", async (req, res) => {
 
 
 //get journal entries by day
-App.get("/tasks/:id", async (req, res) => {
+App.get("/journalentries/:day", async (req, res) => {
   try {
-    const { id } = req.params;
-    const singleTask = await db.query("SELECT * FROM tasks WHERE id = $1", [
-      id,
-    ]);
+    const { day } = req.params;
+    const singleJournalEntry = await db.query(`SELECT * FROM journal_entries WHERE created_at= '2020-11-${day}'`);
 
-    res.json(singleTask.rows[0]);
+    res.json(singleJournalEntry.rows);
   } catch (err) {
     console.error(err.message);
   }
