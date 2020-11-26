@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import './styles/MultilineTextFields.scss';
@@ -14,11 +14,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MultilineTextFields(props) {
   const classes = useStyles();
-  const [response, setResponse] = React.useState('');
-
+  const [response, setResponse] = useState('');
+  // const [answers, setAnswers] = useState([]);
+  // console.log('response', response);
+  // console.log('props', props);
 
   const handleChange = (event) => {
     setResponse(event.target.value);
+    props.setAnswers(event.target.value)
   };
 
   

@@ -30,7 +30,7 @@ App.listen(PORT, () => {
 App.post("/tasks", async (req, res) => {
   const { task, completed, user_id } = req.body;
   console.log(typeof user_id);
-  console.log('are you hitting this?')
+  console.log("are you hitting this?");
 
   try {
     const newTodo = await db.query(
@@ -56,8 +56,10 @@ App.get("/tasks", async (req, res) => {
 //get all incomplete tasks
 App.get("/taskspending", async (req, res) => {
   try {
-    const pendingTodos = await db.query("SELECT * FROM tasks WHERE completed = false");
-    console.log('pendingTodos :', pendingTodos.rows);
+    const pendingTodos = await db.query(
+      "SELECT * FROM tasks WHERE completed = false"
+    );
+    console.log("pendingTodos :", pendingTodos.rows);
 
     res.json(pendingTodos.rows);
   } catch (err) {
@@ -68,8 +70,10 @@ App.get("/taskspending", async (req, res) => {
 //get all complete tasks
 App.get("/taskscompleted", async (req, res) => {
   try {
-    const completedTodos = await db.query("SELECT * FROM tasks WHERE completed = true");
-    console.log('completedTodos :', completedTodos.rows);
+    const completedTodos = await db.query(
+      "SELECT * FROM tasks WHERE completed = true"
+    );
+    console.log("completedTodos :", completedTodos.rows);
 
     res.json(completedTodos.rows);
   } catch (err) {
@@ -77,14 +81,15 @@ App.get("/taskscompleted", async (req, res) => {
   }
 });
 
-
 //get a single task
 App.get("/tasks/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const singleTask = await db.query("SELECT * FROM tasks WHERE id = $1", [id]);
+    const singleTask = await db.query("SELECT * FROM tasks WHERE id = $1", [
+      id,
+    ]);
 
-    res.json(singleTask.rows[0])
+    res.json(singleTask.rows[0]);
   } catch (err) {
     console.error(err.message);
   }
@@ -96,36 +101,38 @@ App.delete("/tasks/:id", async (req, res) => {
     const { id } = req.params;
     const deleteTask = await db.query("DELETE FROM tasks WHERE id = $1", [id]);
 
-    res.json('to do was deleted')
-
+    res.json("to do was deleted");
   } catch (err) {
     console.error(err.message);
   }
 });
 
-
-//update a single task 
+//update a single task
 App.put("/tasks/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const {task} =  req.body;
-    const updateTask = await db.query("UPDATE tasks SET task = $1 WHERE id = $2", [task, id]);
+    const { task } = req.body;
+    const updateTask = await db.query(
+      "UPDATE tasks SET task = $1 WHERE id = $2",
+      [task, id]
+    );
 
-    res.json('it was update')
-
+    res.json("it was update");
   } catch (err) {
     console.error(err.message);
   }
 });
 
-//update a single task to completed from incomplete 
+//update a single task to completed from incomplete
 App.put("/taskscompleted/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const updateTask = await db.query("UPDATE tasks SET completed = true WHERE id = $1", [id]);
+    const updateTask = await db.query(
+      "UPDATE tasks SET completed = true WHERE id = $1",
+      [id]
+    );
 
-    res.json('it was changed to completed')
-
+    res.json("it was changed to completed");
   } catch (err) {
     console.error(err.message);
   }
@@ -134,29 +141,58 @@ App.put("/taskscompleted/:id", async (req, res) => {
 //ADD YOGA YOUTUBE VIA FAVORITE BUTTON
 
 App.post("/yoga", async (req, res) => {
-  const { title, urlSource } = req.body
+  const { title, urlSource } = req.body;
   try {
     const newFavourite = await db.query(
       "INSERT INTO workouts(name, link, user_id) VALUES($1, $2, 1) RETURNING *",
       [title, urlSource]
-      );
-      res.json({})
+    );
+    res.json({});
   } catch (error) {
-    console.error(error.message)
+    console.error(error.message);
   }
 });
 
 //ADD MEDITATE SPOTIFY VIA FAVORITE BUTTON
 
 App.post("/meditate", async (req, res) => {
-  const { title, urlSource } = req.body
+  const { title, urlSource } = req.body;
   try {
     const newFavourite = await db.query(
       "INSERT INTO meditations(user_id, link, name) VALUES(1, $2, $1) RETURNING *",
       [title, urlSource]
-      );
-      res.json({})
+    );
+    res.json({});
   } catch (error) {
-    console.error(error.message)
+    console.error(error.message);
+  }
+});
+
+//ADD JOURNAL-SAAD ENTRY VIA SUBMIT ARROW
+
+App.post("/journal1", async (req, res) => {
+  const { answerOne, answerTwo, answerThree } = req.body;
+  try {
+    const sadAnswer = await db.query(
+      "INSERT INTO journal_entries(user_id, created_at, answer_one, answer_two, answer_three, result) VALUES(1, NOW(), $1, $2, $3, false) RETURNING *",
+      [answerOne, answerTwo, answerThree]
+    );
+    res.json({});
+  } catch (error) {
+    console.error(error.message);
+  }
+});
+
+// ADD JOURNAL-HAPPY ENTRY VIA SUBMIT ARROW
+App.post("/journal2", async (req, res) => {
+  const { answerOne, answerTwo, answerThree } = req.body;
+  try {
+    const sadAnswer = await db.query(
+      "INSERT INTO journal_entries(user_id, created_at, answer_one, answer_two, answer_three, result) VALUES(1, NOW(), $1, $2, $3, true) RETURNING *",
+      [answerOne, answerTwo, answerThree]
+    );
+    res.json({})
+  } catch (error) {
+    console.log(error.message)
   }
 });
