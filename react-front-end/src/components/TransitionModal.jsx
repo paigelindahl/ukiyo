@@ -47,7 +47,14 @@ export function TransitionModal(props) {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            {props.item}
+          <iframe
+          width="300"
+          height="500"
+          src={props.link}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          title="5"
+        ></iframe>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

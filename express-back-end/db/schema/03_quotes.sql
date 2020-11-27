@@ -3,5 +3,7 @@ DROP TABLE IF EXISTS quotes CASCADE;
 CREATE TABLE quotes(
     id SERIAL PRIMARY KEY NOT NULL,
     content TEXT NOT NULL,
-    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+    author VARCHAR(255),
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    is_favourited BOOLEAN DEFAULT FALSE
 );

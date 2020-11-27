@@ -19,6 +19,9 @@ h4.meditate-text{
   left: 50px;
 }
 
+.dashboard-title{
+  text-decoration: none;
+}
 
 .one {
   background-color: #93A2ED;
@@ -79,14 +82,42 @@ h4.meditate-text{
     left: 50px;
     bottom: 30px;
   }
+}
+
+.six {
+  background-color: #93A2ED;
+  border-radius: 15px;
+  grid-column: 2 / 7;
+  grid-row: 5 / 7;
+}
+
+.seven { 
+  background-color: #7BCDC8;
+  border-radius: 15px;
+  grid-column: 7 / 12;
+  grid-row: 5 / 6;
+}
+
+.eight {
+  background-color: #7BCDC8;
+  border-radius: 15px;
+  grid-column: 2/ 7;
+  grid-row: 7 / 8;
+}
+
+.nine {
+  border-radius: 15px;
+  background-color: #FFDEA6;
+  grid-column: 7 / 12;
+  grid-row: 6 / 8;
 
 }
 
-.dashboard-title{
-  text-decoration: none;
+.ten {
+  border-radius: 15px;
+  background-color: #F5A571;
+  grid-column: 2 / 12;
+  grid-row: 8;
+
 }
 
-// .item-title {
-//   position: relative;
-//   bottom: 50px;
-// }

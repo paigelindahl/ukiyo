@@ -209,3 +209,24 @@ App.get("/journalentries/:selectedDate", async (req, res) => {
     console.error(err.message);
   }
 });
+
+//get all the Yoga 
+App.get("/yoga", async (req, res) => {
+  try {
+    const allYogaLinks = await db.query("SELECT * FROM workouts");
+    res.json(allYogaLinks.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+
+//get all the Meditations 
+App.get("/meditate", async (req, res) => {
+  try {
+    const allMeditationLinks = await db.query("SELECT * FROM meditations");
+    res.json(allMeditationLinks.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
