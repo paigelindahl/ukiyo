@@ -199,12 +199,12 @@ App.post("/journal2", async (req, res) => {
 
 
 //get journal entries by day
-App.get("/journalentries/:day", async (req, res) => {
+App.get("/journalentries/:selectedDate", async (req, res) => {
   try {
-    const { day } = req.params;
-    const singleJournalEntry = await db.query(`SELECT * FROM journal_entries WHERE created_at= '2020-11-${day}'`);
+    const { selectedDate } = req.params;
+    const singleJournalEntry = await db.query(`SELECT * FROM journal_entries WHERE created_at= '2020-11-${selectedDate}'`);
 
-    res.json(singleJournalEntry.rows);
+    res.json(singleJournalEntry.rows[0]);
   } catch (err) {
     console.error(err.message);
   }
