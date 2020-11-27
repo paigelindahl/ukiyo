@@ -230,3 +230,37 @@ App.get("/meditate", async (req, res) => {
     console.error(err.message);
   }
 });
+
+
+//get all favourite Meditations
+App.get("/favmeditation", async (req, res) => {
+  try {
+    const favMeditationLinks = await db.query("SELECT * FROM meditations WHERE is_favourited = true");
+    res.json(favMeditationLinks.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+
+//get all favourite Yoga
+
+App.get("/favyoga", async (req, res) => {
+  try {
+    const favYogaLinks = await db.query("SELECT * FROM workouts WHERE is_favourited = true");
+    res.json(favYogaLinks.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+//get all favourite Quotes
+
+App.get("/favquotes", async (req, res) => {
+  try {
+    const favQuotesLinks = await db.query("SELECT * FROM quotes WHERE is_favourited = true");
+    res.json(favQuotesLinks.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});

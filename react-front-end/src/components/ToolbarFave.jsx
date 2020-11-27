@@ -7,6 +7,9 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import { FavMeditations } from "./FavMeditations";
+import { FavYoga } from "./FavYoga";
+import { FavQuotes } from "./FavQuotes";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -83,13 +86,13 @@ export function ToolbarFave() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          Quotes
+          <FavQuotes/>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          
+          <FavMeditations />
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          
+          <FavYoga />
         </TabPanel>
       </SwipeableViews>
     </div>
