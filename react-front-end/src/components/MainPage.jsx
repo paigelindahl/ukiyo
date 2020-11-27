@@ -4,15 +4,16 @@ import { Quotes } from "./Quotes";
 import { CustomSlider } from "./CustomSlider";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { Link } from "react-router-dom";
+import "./styles/MainPage.scss";
 
 export function MainPage(props) {
   const [sliderValue, setSliderValue] = useState(50);
   console.log("sliderValue :", sliderValue);
 
   return (
-    <>
+    <div className="background-image">
       <Greeting />
-        <Quotes />
+      <Quotes />
       <CustomSlider setSliderValue={setSliderValue} />
       {sliderValue > 50 ? (
         <Link className="link" to="/journal1">
@@ -23,6 +24,6 @@ export function MainPage(props) {
           <ArrowForwardIosIcon fontSize="large" />
         </Link>
       )}
-    </>
+    </div>
   );
 }
