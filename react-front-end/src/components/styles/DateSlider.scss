@@ -1,0 +1,26 @@
+.scroll-date {
+  overflow: auto;
+  white-space: nowrap;
+  font-size: 25px;
+  padding:14px;
+}
+
+.not-selected {
+  padding: 14px;
+}
+
+.date-container {
+  display: flex;
+  justify-content: space-between;
+  // margin: auto;
+  width: 80%
+}
+
+.scroll-date::-webkit-scrollbar{
+	display:none;
+}
+
+.selected-date {
+  font-size: 35px;
+  font-weight: 400;
+}

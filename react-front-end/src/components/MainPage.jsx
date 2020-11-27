@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Greeting } from "./Greeting";
-import { Quote } from "./Quote";
+import { Quotes } from "./Quotes";
 import { CustomSlider } from "./CustomSlider";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { Link } from "react-router-dom";
@@ -12,7 +12,7 @@ export function MainPage(props) {
   return (
     <>
       <Greeting />
-      <Quote />
+        <Quotes />
       <CustomSlider setSliderValue={setSliderValue} />
       {sliderValue > 50 ? (
         <Link className="link" to="/journal1">
