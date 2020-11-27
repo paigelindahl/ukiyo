@@ -9,7 +9,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 export function JournalEntries() {
   const [journalEntries, setJournalEntries] = useState([]);
   const [selectedDate, setSelectedDate] = useState(26);
-
+ 
   const getEntriesForTheDay = async (event) => {
     try {
       const response = await fetch(

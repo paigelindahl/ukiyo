@@ -204,7 +204,7 @@ App.get("/journalentries/:selectedDate", async (req, res) => {
     const { selectedDate } = req.params;
     const singleJournalEntry = await db.query(`SELECT * FROM journal_entries WHERE created_at= '2020-11-${selectedDate}'`);
 
-    res.json(singleJournalEntry.rows[0]);
+    res.json(singleJournalEntry.rows);
   } catch (err) {
     console.error(err.message);
   }
