@@ -46,25 +46,25 @@ export function JournalEntries() {
           entry.result ? (
             <div className="happy-question">
               <span className="dot a"></span>
-              <h5>"What is something that inspired you recently?"</h5>
+              <h5>What is something that inspired you recently?</h5>
               <p>{entry.answer_one}</p>
               <span className="dot b"></span>
-              <h5>"This is the second question"</h5>
+              <h5>What is something you accomplished today?</h5>
               <p>{entry.answer_two}</p>
               <span className="dot c"></span>
-              <h5>"this is the third question?"</h5>
+              <h5>What are three things you are grateful for?</h5>
               <p>{entry.answer_three}</p>
             </div>
           ) : (
             <div className="sad-question">
               <span className="dot a"></span>
-              <h5>Why are you sad?</h5>
+              <h5>My greatest qualities are...?</h5>
               <p>{entry.answer_one}</p>
               <span className="dot b"></span>
-              <h5>Why are you so sad?</h5>
+              <h5>What’s something that you’re looking forward to? </h5>
               <p>{entry.answer_two}</p>
               <span className="dot c"></span>
-              <h5>Why are you very sad?</h5>
+              <h5>What are three things you are grateful for?</h5>
               <p>{entry.answer_three}</p>
             </div>
           )

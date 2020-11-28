@@ -4,8 +4,8 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Favorite from "@material-ui/icons/Favorite";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 
-// const  = withStyles({
-//   checked: {}
+// const styles = withStyles({
+//   width: 100
 // })((props) => <Checkbox color="default" {...props} />);
 
 export function FavouriteBtn(props) {

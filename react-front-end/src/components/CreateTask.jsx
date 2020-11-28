@@ -3,7 +3,8 @@ import "./styles/JournalTitle.scss";
 import { TaskInput } from "./TaskInput";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { LogoProfile } from './LogoProfile';
-import "./styles/MainPage.scss"
+import "./styles/MainPage.scss";
+import {Link} from 'react-router-dom';
 
 export function CreateTask(props) {
   const [task, setTask] = React.useState("");
@@ -41,7 +42,9 @@ export function CreateTask(props) {
             className="arrow-submit"
             onClick={onSubmit}
           />
-          <span className="skip-btn">Skip</span>
+          <Link to="/dashboard" className="skip-link">
+            <span className="skip-btn">Skip</span>
+          </Link>
         </div>
       </form>
       </div>
