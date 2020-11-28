@@ -4,6 +4,7 @@ import './styles/MultilineTextFields.scss';
 import MultilineTextFields from './MultilineTextFields';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { Link } from 'react-router-dom';
+import { LogoProfile } from './LogoProfile';
 
 export function JournalHappy() {
   const [answerOne, setAnswerOne] = useState('');
@@ -40,6 +41,8 @@ export function JournalHappy() {
 
   return (
     <>
+     <div className="background-image2">
+      <LogoProfile/>
       <JournalTitle />
       <form>
         <MultilineTextFields setAnswers={settingAnswerOne}  question="What is something that inspired you recently?"/>
@@ -50,6 +53,7 @@ export function JournalHappy() {
       <Link to="/dashboard" className="skip-link">
         <span className="skip-btn">Skip</span>
       </Link>
+      </div>
     </>
   )
 }

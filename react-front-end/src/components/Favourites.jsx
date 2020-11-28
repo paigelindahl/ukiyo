@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { ToolbarFave } from "./ToolbarFave";
 import { TopNav } from "./TopNav";
 import "./styles/Favourites.scss";
+import { LogoProfile } from './LogoProfile';
 
 
 const colours = ["#93A2ED", "#7BCDC8", "#F5A571", "#FFDEA6"];
@@ -16,6 +17,7 @@ export function Favourites() {
 
   return (
     <>
+      <LogoProfile/>
       <TopNav />
       <ToolbarFave />
   

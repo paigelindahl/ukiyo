@@ -33,7 +33,6 @@ const App = function(){
     return (
       <Router>
         <div className="App">
-          <LogoProfile/>
           <Route exact path="/" component={MainPage}/>
           <Route path="/journal1" component={JournalSad}/>
           <Route path="/journal2" component={JournalHappy}/>

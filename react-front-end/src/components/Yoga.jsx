@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Bubbles } from "./Bubbles";
 import "./styles/Meditate.scss";
 import { TopNav } from './TopNav';
+import { LogoProfile } from './LogoProfile';
 
 export function Yoga() {
   const [yoga, setYoga ] = useState([])
@@ -26,6 +27,7 @@ export function Yoga() {
 
     return (
   <>
+    <LogoProfile/>
     <TopNav/>
     <Bubbles source={yoga}/>
   </>

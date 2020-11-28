@@ -2,6 +2,8 @@ import React from "react";
 import "./styles/JournalTitle.scss";
 import { TaskInput } from "./TaskInput";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import { LogoProfile } from './LogoProfile';
+import "./styles/MainPage.scss"
 
 export function CreateTask(props) {
   const [task, setTask] = React.useState("");
@@ -25,6 +27,8 @@ export function CreateTask(props) {
 
   return (
     <>
+    <div className="background-image2">
+      <LogoProfile/>
       <div className="title">
         <h2>Let's</h2>
         <h2>GET TASKING!</h2>
@@ -40,6 +44,7 @@ export function CreateTask(props) {
           <span className="skip-btn">Skip</span>
         </div>
       </form>
+      </div>
     </>
   );
 }

@@ -5,6 +5,7 @@ import "./styles/JournalEntries.scss";
 import { DateSlider } from "./DateSlider.jsx";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+import { LogoProfile } from './LogoProfile';
 
 export function JournalEntries() {
   const [journalEntries, setJournalEntries] = useState([]);
@@ -30,6 +31,7 @@ export function JournalEntries() {
 
   return (
     <>
+      <LogoProfile/>
       <TopNav />
       <div className="icons">
         <span>

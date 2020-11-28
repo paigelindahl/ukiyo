@@ -3,6 +3,7 @@ import { JournalTitle } from "./JournalTitle";
 import MultilineTextFields from "./MultilineTextFields";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { Link } from "react-router-dom";
+import { LogoProfile } from './LogoProfile';
 
 export function JournalSad(props) {
   const [answerOne, setAnswerOne] = useState("");
@@ -38,6 +39,8 @@ export function JournalSad(props) {
 
   return (
     <>
+    <div className="background-image2">
+      <LogoProfile/>
       <JournalTitle />
       <form>
         <MultilineTextFields
@@ -61,6 +64,7 @@ export function JournalSad(props) {
       <Link to="/dashboard" className="skip-link">
         <span className="skip-btn">Skip</span>
       </Link>
+      </div>
     </>
   );
 }

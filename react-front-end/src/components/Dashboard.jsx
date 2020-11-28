@@ -1,9 +1,12 @@
 import React from "react";
 import "./styles/Dashboard.scss";
 import { Link } from "react-router-dom";
+import { LogoProfile } from './LogoProfile';
 
 export function Dashboard(props) {
   return (
+    <>
+    <LogoProfile/>
     <div className="bubble-container">
       <div className="one">
         <Link to="/yoga" className="dashboard-title">
@@ -67,5 +70,6 @@ export function Dashboard(props) {
         </Link>
       </div>
     </div>
+    </>
   );
 }

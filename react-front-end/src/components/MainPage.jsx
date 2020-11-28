@@ -5,6 +5,7 @@ import { CustomSlider } from "./CustomSlider";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { Link } from "react-router-dom";
 import "./styles/MainPage.scss";
+import {LogoProfile} from "./LogoProfile";
 
 export function MainPage(props) {
   const [sliderValue, setSliderValue] = useState(50);
@@ -12,6 +13,7 @@ export function MainPage(props) {
 
   return (
     <div className="background-image">
+      <LogoProfile/>
       <Greeting />
       <Quotes />
       <CustomSlider setSliderValue={setSliderValue} />
