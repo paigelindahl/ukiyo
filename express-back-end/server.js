@@ -269,10 +269,10 @@ App.get("/favquotes", async (req, res) => {
 //post favorite quote to db
 
 App.post("/favquotes", async (req, res) => {
-  const {quoteAuthor, quoteText} = req.body;
+  const {author, text} = req.body;
   
   try {
-    const addQuote = await db.query("INSERT INTO quotes(content, author, user_id, is_favourited) VALUES($1, $2, 1, true) RETURNING *", [quoteText, quoteAuthor]);
+    const addQuote = await db.query("INSERT INTO quotes(content, author, user_id, is_favourited) VALUES($1, $2, 1, true) RETURNING *", [author, text]);
     res.json("added quote to DB");
   } catch (err) {
     console.error(err.message);

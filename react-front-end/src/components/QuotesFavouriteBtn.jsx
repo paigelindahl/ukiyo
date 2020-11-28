@@ -1,25 +1,28 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Favorite from "@material-ui/icons/Favorite";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 
 export function QuotesFavouriteBtn(props) {
-  console.log('this is upper quote text', typeof props.text);
-  console.log('this is  upper author',typeof props.author);
-  const quoteAuthor = props.author
-  const quoteText = props.text
   const [state, setState] = React.useState({
     checkedH: false,
   });
+  const [author, setAuthor] = useState('');
+  const [text, setText] = useState('');
 
-
-  const addFavouriteQuotes = async function (quoteText, quoteAuthor) {
+  useEffect (() =>{  
+    setAuthor(props.author);
+    setText(props.text)
   
-  console.log('this is quote text', quoteText);
-  console.log('this is author', quoteAuthor);
+  }, [])
 
-    const body = {quoteAuthor, quoteText}
+
+
+  const addFavouriteQuotes = async function (props) {
+  
+ 
+    const body = {author, text}
     try {
       await fetch('http://localhost:8080/favquotes', {
         method: "POST",
