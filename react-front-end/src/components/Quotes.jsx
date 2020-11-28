@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { FavouriteBtn } from "./FavouriteBtn";
+import { QuotesFavouriteBtn } from "./QuotesFavouriteBtn";
 import "./styles/Quotes.scss";
 
 export function Quotes(props) {
@@ -30,7 +30,7 @@ export function Quotes(props) {
         <div className="quote-container">
           <div className="text-heart">
             <h5>QUOTE OF THE DAY</h5>
-            <FavouriteBtn />
+            <QuotesFavouriteBtn text={quote.text} author={quote.author}/>
           </div>
           <div className="quote-content">
             <p>"{quote.text}"</p>

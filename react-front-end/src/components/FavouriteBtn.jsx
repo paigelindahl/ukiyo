@@ -9,19 +9,15 @@ import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 // })((props) => <Checkbox color="default" {...props} />);
 
 export function FavouriteBtn(props) {
-  // const [favTitle, setFavTitle] = useState('');
-  // setFavTitle(props.title);
   const faveTitle = props.title
   const faveId = props.id
-  const addFavourite = (props) => {
+ 
+  const addFavourite = () => {
     if (faveTitle.includes("Yoga")) {
       addFavouriteYoga(faveId);
-    } else if (faveTitle.includes("Meditation")) {
-      addFavouriteMeditate(faveId);
     } else {
-      // addFavoriteQuote();
-      console.log('I am quotes');
-    }
+      addFavouriteMeditate(faveId);
+    } 
   };
 
   const addFavouriteYoga = async function (faveId) {
@@ -44,15 +40,7 @@ export function FavouriteBtn(props) {
     }
   };
 
-  // const addFavouriteQuotes = async function (props) {
-  //   try {
-  //     await fetch(`http://localhost:8080/quotes/${props.id}`, {
-  //       method: "PUT",
-  //     });
-  //   } catch (error) {
-  //     console.error(error.message);
-  //   }
-  // };
+  
 
   const [state, setState] = React.useState({
     checkedH: false,
