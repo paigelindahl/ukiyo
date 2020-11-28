@@ -1,6 +1,7 @@
 import React from "react";
-import { withStyles } from "@material-ui/core/styles";
+import { emphasize, withStyles } from "@material-ui/core/styles";
 import Chip from "@material-ui/core/Chip";
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 // import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
@@ -27,11 +28,10 @@ const StyledBreadcrumb = withStyles((theme) => ({
     },
     "&:active": {
       boxShadow: theme.shadows[1],
-
-      // backgroundColor: emphasize(theme.palette.grey[300], 0.12),
+      backgroundColor: emphasize(theme.palette.primary.main, 0.12),
     },
   },
-}))(Chip); // TypeScript only: need a type cast here because https://github.com/Microsoft/TypeScript/issues/26591
+}))(Chip);
 
 function handleClick(event) {
   // event.preventDefault();
@@ -42,15 +42,16 @@ export function TopNav() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Link to="/meditate" style={{ textDecoration: "none" }}>
+        <Link to="/meditate" style={{ textDecoration: "none"}}>
           <StyledBreadcrumb
             component="a"
             label="Meditate"
             onClick={handleClick}
+            style={{fontFamily: "Montserrat", fontSize: "16px"}}
           />
         </Link>
-        <Link to="/yoga" style={{ textDecoration: "none" }}>
-          <StyledBreadcrumb component="a" label="Yoga" onClick={handleClick} />
+        <Link to="/yoga" style={{ textDecoration: "none"}}>
+          <StyledBreadcrumb component="a" label="Yoga" onClick={handleClick} style={{fontFamily: "Montserrat", fontSize: "16px"}} />
         </Link>
         <Link to="/tasks" style={{ textDecoration: "none" }}>
         <StyledBreadcrumb
@@ -58,24 +59,26 @@ export function TopNav() {
           href="#"
           label="Tasks"
           onClick={handleClick}
+          style={{fontFamily: "Montserrat", fontSize: "16px"}}
         />
         </Link>
-        <Link to="/journalentries" style={{ textDecoration: "none" }}>
+        <Link to="/journalentries" style={{ textDecoration: "none"}}>
         <StyledBreadcrumb
           component="a"
           href="#"
           label="Journal"
           onClick={handleClick}
+          style={{fontFamily: "Montserrat", fontSize: "16px"}}
         />
         </Link>
-        <Link to="/favourites" style={{ textDecoration: "none" }}>
+        <Link to="/favourites" style={{ textDecoration: "none"}}>
           <StyledBreadcrumb
             component="a"
             href="#"
             label="Favourites"
             onClick={handleClick}
+            style={{fontFamily: "Montserrat", fontSize: "16px"}}
           />
-          
         </Link>
       </ThemeProvider>
     </>

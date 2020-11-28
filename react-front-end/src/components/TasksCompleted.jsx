@@ -72,7 +72,7 @@ export function TasksCompleted() {
         <TableHead>
           <TableRow>
             <TableCell></TableCell>
-            <TableCell align="center" style={{ fontSize: "18px" }}>
+            <TableCell align="center" style={{ fontSize: "20px", fontFamily: "Montserrat" }}>
               Tasks
             </TableCell>
             <TableCell></TableCell>
@@ -84,7 +84,7 @@ export function TasksCompleted() {
               <TableCell component="th" scope="row">
                 <FilterDramaIcon style={{ color: newColours[index] }} />
               </TableCell>
-              <TableCell align="center" style={{ fontSize: "12px" }}>
+              <TableCell align="center" style={{ fontSize: "15px", fontFamily: "Montserrat"  }}>
                 {todo.task}
               </TableCell>
               <TableCell>

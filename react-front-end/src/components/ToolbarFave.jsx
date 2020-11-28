@@ -48,7 +48,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     width: 374
-  }
+  },
+  indicator: {
+    backgroundColor: "#FFDEA6",
+  },
 }));
 
 export function ToolbarFave() {
@@ -66,15 +69,18 @@ export function ToolbarFave() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar position="static" color="default" style={{marginTop:"15px"}}>
         <Tabs
           value={value}
           onChange={handleChange}
           indicatorColor="primary"
-          textColor="primary"
           variant="fullWidth"
           aria-label="full width tabs example"
-        >
+          style={{color:"#93A2ED"}}
+          classes={{
+            indicator: classes.indicator
+          }}
+          >
           <Tab label="Quotes" {...a11yProps(0)} />
           <Tab label="Mediations" {...a11yProps(1)} />
           <Tab label="Yoga" {...a11yProps(2)} />

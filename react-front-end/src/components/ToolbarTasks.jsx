@@ -47,7 +47,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     width: 374,
-  }
+  },
+  indicator: {
+    backgroundColor: "#FFDEA6",
+  },
 }));
 
 
@@ -70,12 +73,14 @@ export function ToolbarTasks() {
         <Tabs
           value={value}
           onChange={handleChange}
-          // indicatorColor="primary"
-          // textColor="primary"
-          style={{color:"#7BCDC8"}}
+          indicatorColor="primary"
           variant="fullWidth"
           aria-label="full width tabs example"
-        >
+          style={{color:"#93A2ED"}}
+          classes={{
+            indicator: classes.indicator
+          }}
+          >
           <Tab label="Pending"{...a11yProps(0)}/>
           <Tab label="Completed" {...a11yProps(1)} />
         </Tabs>

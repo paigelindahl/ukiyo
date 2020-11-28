@@ -1,9 +1,39 @@
 .dot {
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
   background-color: #bbb;
-  border-radius: 50%;
-  position: relative;
-  float: left;
+  border-radius: 50px;
+}
 
+.block{
+  display: flex;
+  width: 100px;
+  justify-content: left;
+}
+
+
+.fav-container {
+  font-family: "Montserrat";
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid black;
+  font-size: 15px;
+  width: 100%;  
+  align-items: center;
+}
+
+.quote-author {
+  width: 130vw;
+}
+
+.author {
+  margin-top: 0px;
+}
+
+.quote {
+  margin-bottom: 0px;
+}
+
+.delete-icon {
+  margin-left: 5px;
 }
