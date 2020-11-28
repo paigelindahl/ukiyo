@@ -10,7 +10,7 @@ export function Bubbles(props) {
     <div className="bubble-container">
       {props.source.map((src, index) => 
         <div className={cssClass[index]}>
-          <FavouriteBtn key={src.id} title={src.title} urlSource={src.link} className="heart-icon"/>
+          <FavouriteBtn key={src.id} id={src.id} title={src.title} className="heart-icon"/>
           <div className="item-title"><h5>{src.title}</h5></div>
           <TransitionModal link={src.link} title={src.title} />
         </div>

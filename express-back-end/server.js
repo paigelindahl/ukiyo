@@ -140,14 +140,14 @@ App.put("/taskscompleted/:id", async (req, res) => {
 
 //ADD YOGA YOUTUBE VIA FAVORITE BUTTON
 
-App.post("/yoga", async (req, res) => {
-  const { title, urlSource } = req.body;
+App.put("/yoga/:id", async (req, res) => {
   try {
+    const { id } = req.params;
     const newFavourite = await db.query(
-      "INSERT INTO workouts(name, link, user_id) VALUES($1, $2, 1) RETURNING *",
-      [title, urlSource]
+      "UPDATE workouts SET is_favourited = true WHERE id = $1",
+      [id]
     );
-    res.json({});
+    res.json("updated to favourites");
   } catch (error) {
     console.error(error.message);
   }
@@ -155,14 +155,14 @@ App.post("/yoga", async (req, res) => {
 
 //ADD MEDITATE SPOTIFY VIA FAVORITE BUTTON
 
-App.post("/meditate", async (req, res) => {
-  const { title, urlSource } = req.body;
+App.put("/meditate/:id", async (req, res) => {
   try {
+    const { id } = req.params;
     const newFavourite = await db.query(
-      "INSERT INTO meditations(user_id, link, name) VALUES(1, $2, $1) RETURNING *",
-      [title, urlSource]
+      "UPDATE meditations SET is_favourited = true WHERE id = $1",
+      [id]
     );
-    res.json({});
+    res.json("updated to favourites");
   } catch (error) {
     console.error(error.message);
   }

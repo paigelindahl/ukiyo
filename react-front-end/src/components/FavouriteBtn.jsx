@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Favorite from "@material-ui/icons/Favorite";
@@ -9,30 +9,45 @@ import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 // })((props) => <Checkbox color="default" {...props} />);
 
 export function FavouriteBtn(props) {
-  const addFavourite = async function () {
-    const title = props.title;
-    const urlSource = props.urlSource;
-     const body = { title, urlSource };
+  // const [favTitle, setFavTitle] = useState('');
+  // setFavTitle(props.title);
+  const faveTitle = props.title
+  const faveId = props.id
+  const addFavourite = (props) => {
+    if (faveTitle.includes("Yoga")) {
+      addFavouriteYoga(faveId);
+    } else if (faveTitle.includes("Meditation")) {
+      addFavouriteMeditate(faveId);
+    } else {
+      // addFavoriteQuote();
+      console.log('I am quotes');
+    }
+  };
+
+  const addFavouriteYoga = async function (faveId) {
     try {
-      await fetch("http://localhost:8080/yoga", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body)
+      await fetch(`http://localhost:8080/yoga/${faveId}`, {
+        method: "PUT",
       });
     } catch (error) {
       console.error(error.message);
     }
   };
 
-  // const addFavouriteMeditate = async function () {
-  //   const title = props.title;
-  //   const urlSource = props.urlSource;
-  //    const body = { title, urlSource };
+  const addFavouriteMeditate = async function (faveId) {
+    try {
+      await fetch(`http://localhost:8080/meditate/${faveId}`, {
+        method: "PUT",
+      });
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  // const addFavouriteQuotes = async function (props) {
   //   try {
-  //     await fetch("http://localhost:8080/meditate", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(body)
+  //     await fetch(`http://localhost:8080/quotes/${props.id}`, {
+  //       method: "PUT",
   //     });
   //   } catch (error) {
   //     console.error(error.message);
