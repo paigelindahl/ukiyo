@@ -5,6 +5,7 @@ import MultilineTextFields from './MultilineTextFields';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { Link } from 'react-router-dom';
 import { LogoProfile } from './LogoProfile';
+import './styles/MainPage.scss'
 
 export function JournalHappy() {
   const [answerOne, setAnswerOne] = useState('');
