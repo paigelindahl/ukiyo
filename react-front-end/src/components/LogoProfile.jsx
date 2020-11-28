@@ -28,7 +28,9 @@ export function LogoProfile(props) {
     <>
       <div className="logo">
         <Link to="/dashboard" className="logo-link">
-          <h1>UKIYO</h1>
+          <h1>
+            <img width="100" src="https://raw.githubusercontent.com/saadxislam/ukiyo/8268406e96bcef9c8a81db510d0b082260ce9209/react-front-end/public/images/logo.svg" alt="logo"/>
+          </h1>
         </Link>
         <div className="profile-info">
         <Avatar alt="Remy Sharp" 
