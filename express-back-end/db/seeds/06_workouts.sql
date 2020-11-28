@@ -1,10 +1,10 @@
 INSERT INTO workouts (title, link, user_id, is_favourited) VALUES ('Yoga: Vinyasa Flow(20min)', 'https://www.youtube.com/embed/6ughUyUmKEo', 1, true);
-INSERT INTO workouts (title, link, user_id, is_favourited) VALUES ('Full Body Yoga: Vinyasa Flow (30min)', 'https://www.youtube.com/embed/KEYSO-Tc2Go?start=1', 1, true);
+INSERT INTO workouts (title, link, user_id, is_favourited) VALUES ('Full Body Yoga: Vinyasa (30min)', 'https://www.youtube.com/embed/KEYSO-Tc2Go?start=1', 1, true);
 INSERT INTO workouts (title, link, user_id, is_favourited) VALUES ('Vinyasa Flow Yoga (45min)', 'https://www.youtube.com/embed/_kl_DxglATI', 1, true);
 INSERT INTO workouts (title, link, user_id, is_favourited) VALUES ('Full Body Yoga (20min)', 'https://www.youtube.com/embed/6ughUyUmKEo', 1, true);
 INSERT INTO workouts (title, link, user_id, is_favourited) VALUES ('Morning Yoga Flow (20min)', 'https://www.youtube.com/embed/hnrkkvx4d50', 1, true);
-INSERT INTO workouts (title, link, user_id) VALUES ('Yoga For Complete Beginners (20min)', 'https://www.youtube.com/embed/v7AYKMP6rOE', 1);
-INSERT INTO workouts (title, link, user_id) VALUES ('Morning Yoga Full Body Stretch (10min)', 'https://www.youtube.com/embed/4pKly2JojMw', 1);
-INSERT INTO workouts (title, link, user_id) VALUES ('Yoga + Pranayama For The Spine(25min)', 'https://www.youtube.com/embed/GwSbLuAoOyw', 1);
-INSERT INTO workouts (title, link, user_id) VALUES ('Full Body Yoga: Vinyasa Flow (30min)', 'https://www.youtube.com/embed/KEYSO-Tc2Go?start=1', 1);
-INSERT INTO workouts (title, link, user_id) VALUES ('Full Body Yoga: Vinyasa Flow (30min)', 'https://www.youtube.com/embed/KEYSO-Tc2Go?start=1', 1);
+INSERT INTO workouts (title, link, user_id) VALUES ('Yoga For Beginners (20min)', 'https://www.youtube.com/embed/v7AYKMP6rOE', 1);
+INSERT INTO workouts (title, link, user_id) VALUES ('Full Body Stretch Yoga(10min)', 'https://www.youtube.com/embed/4pKly2JojMw', 1);
+INSERT INTO workouts (title, link, user_id) VALUES ('Yoga For The Spine(25min)', 'https://www.youtube.com/embed/GwSbLuAoOyw', 1);
+INSERT INTO workouts (title, link, user_id) VALUES ('Yoga For Core (30min)', 'https://www.youtube.com/embed/oMOgnSMcfM0', 1);
+INSERT INTO workouts (title, link, user_id) VALUES ('Yoga For Neck and Back (10min)', 'https://www.youtube.com/embed/X3-gKPNyrTA', 1);

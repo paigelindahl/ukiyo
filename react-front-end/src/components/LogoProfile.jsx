@@ -28,8 +28,8 @@ export function LogoProfile(props) {
     <>
       <div className="logo">
         <Link to="/dashboard" className="logo-link">
-          <h1>
-            <img width="100" src="https://raw.githubusercontent.com/saadxislam/ukiyo/8268406e96bcef9c8a81db510d0b082260ce9209/react-front-end/public/images/logo.svg" alt="logo"/>
+          <h1 className="ukiyo-logo">
+            <img src="https://raw.githubusercontent.com/saadxislam/ukiyo/0cc1e84a758fe69a6c0fac3e8551e466d7070a80/react-front-end/public/images/Ukiyo-Logo.svg" alt="logo"/>
           </h1>
         </Link>
         <div className="profile-info">

@@ -7,8 +7,8 @@ export function Greeting(props) {
   return (
     <>
       <div className="greeting">
-        <h4 className="day">Thursday, December 3rd</h4>
-        <h2 className="personalized-greeting">GOOD MORNING, PAIGE!</h2> 
+        <h5 className="day">Thursday, December 3rd</h5>
+        <h4 id="greeting" className="personalized-greeting">GOOD MORNING, PAIGE!</h4> 
       </div>
     </>
   )

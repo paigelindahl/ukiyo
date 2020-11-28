@@ -13,10 +13,19 @@
 
 .user-name {
   padding-left: 10px;
+  padding-right: 5px;
+  font-family: "Monsterrat";
+  font-size: 20px;
 }
 
 .logo-link{
   text-decoration: none;
   color: black;
-  // background: url("https://raw.githubusercontent.com/saadxislam/ukiyo/8268406e96bcef9c8a81db510d0b082260ce9209/react-front-end/public/images/logo.svg") no-repeat;
+}
+
+.ukiyo-logo{
+  left: 9px;
+  width: 105px;
+  position: relative;
+  top: 10px;
 }

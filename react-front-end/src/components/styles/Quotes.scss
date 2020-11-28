@@ -1,13 +1,16 @@
 .quote-container {
+  font-family: "Monsterrat";
   position: relative;
-  top: 30px;
+  left: 25px;
+  top: 80px;
 }
 
 .quote-content {
-  justify-content: center;
-  padding-left: 120px;
   width: 60%;
-  margin-top: 0px;
+  position: relative;
+  left: 120px;
+  bottom: 30px;
+  text-align: left;
 }
 
 .text-heart {
