@@ -5,6 +5,10 @@ import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import { AddTaskBtn } from "./AddTaskBtn";
+import './styles/AddTaskSlider.scss';
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
+import FilterDramaIcon from "@material-ui/icons/FilterDrama";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,13 +24,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#7BCDC8",
+    },
+  },
+});
+
 export function AddTaskSlider() {
   const classes = useStyles();
   const [state, setState] = React.useState({
     bottom: false,
   });
-
-  
   const [newAddedTask, setNewAddedTask] = useState('')
 
   const addNewTask = async() => {
@@ -47,44 +57,44 @@ export function AddTaskSlider() {
     }
   }
 
+  const cancelTask = function() {
+    setState({bottom: false});
+  }
+
   const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-    setState({ ...state, [anchor]: open });
+    setState({[anchor]: open });
   };
 
   const list = (anchor) => (
-    <div
-      className={clsx(classes.list.shape, {
-        [classes.fullList]: anchor === "bottom",
-      })}
-      role="presentation"
-      // onClick={toggleDrawer(anchor, false)}
-      // onKeyDown={toggleDrawer(anchor, false)}
-    >
+    <div>
       <List>
-        <h4>Create a new task</h4>
-        {<input value={newAddedTask} onChange={e => setNewAddedTask(e.target.value) }>
-
-        </input>}
-        <Button
-          variant="outlined"
-          onClick={() => {
-            toggleDrawer(anchor, false);
-            addNewTask();
-          }}
-        >
-          ADD
-        </Button>
-        {/* <button >ADD</button> */}
+        <input className="add-input" value={newAddedTask} onChange={e => setNewAddedTask(e.target.value) }/>
+        <div className="btn-container">
+          <ThemeProvider theme={theme}>
+          <Button
+              color="primary"
+              onClick={() => {
+                toggleDrawer(anchor, false);
+                cancelTask();
+              }}
+            >
+              CANCEL
+            </Button>
+            <Button
+              variant="contained" 
+              color="primary"
+              onClick={() => {
+                toggleDrawer(anchor, false);
+                addNewTask();
+              }}
+            >
+              ADD
+            </Button>
+          </ThemeProvider>
+        </div>
       </List>
     </div>
   );
-  // onClose={toggleDrawer(anchor, false)}
 
   return (
     <div>
