@@ -1,16 +1,17 @@
+require('dotenv').config();
 const Express = require("express");
 const App = Express();
 const BodyParser = require("body-parser");
 const db = require("./db");
 const dbHelpers = require("./helpers/dbHelpers")(db);
 
-const PORT = 8080;
+const port = process.env.PORT || 8080;
 
 // Express Configuration
 // App.use('/api/users', usersRouter(dbHelpers));
 App.use(BodyParser.urlencoded({ extended: false }));
 App.use(BodyParser.json());
-App.use(Express.static("public"));
+App.use(Express.static("./../react-front-end/build"));
 
 // Sample GET route
 App.get("/api/data", (req, res) =>
@@ -19,10 +20,10 @@ App.get("/api/data", (req, res) =>
   })
 );
 
-App.listen(PORT, () => {
+App.listen(port, () => {
   // eslint-disable-next-line no-console
   console.log(
-    `Express seems to be listening on port ${PORT} so that's pretty good 👍`
+    `Express seems to be listening on port ${port} so that's pretty good 👍`
   );
 });
 
