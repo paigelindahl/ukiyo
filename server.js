@@ -11,7 +11,7 @@ const port = process.env.PORT || 8080;
 // App.use('/api/users', usersRouter(dbHelpers));
 App.use(BodyParser.urlencoded({ extended: false }));
 App.use(BodyParser.json());
-App.use(Express.static("./../react-front-end/build"));
+App.use(Express.static("./react-front-end/build"));
 
 // Sample GET route
 App.get("/api/data", (req, res) =>
