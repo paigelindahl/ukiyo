@@ -47,11 +47,11 @@ export function TopNav() {
             component="a"
             label="Meditate"
             onClick={handleClick}
-            style={{fontFamily: "Montserrat", fontSize: "16px"}}
+            style={{fontFamily: "Montserrat", fontSize: "15px", fontWeight: "bold"}}
           />
         </Link>
         <Link to="/yoga" style={{ textDecoration: "none"}}>
-          <StyledBreadcrumb component="a" label="Yoga" onClick={handleClick} style={{fontFamily: "Montserrat", fontSize: "16px"}} />
+          <StyledBreadcrumb component="a" label="Yoga" onClick={handleClick} style={{fontFamily: "Montserrat", fontSize: "15px", fontWeight: "bold"}} />
         </Link>
         <Link to="/tasks" style={{ textDecoration: "none" }}>
         <StyledBreadcrumb
@@ -59,7 +59,7 @@ export function TopNav() {
           href="#"
           label="Tasks"
           onClick={handleClick}
-          style={{fontFamily: "Montserrat", fontSize: "16px"}}
+          style={{fontFamily: "Montserrat", fontSize: "15px", fontWeight: "bold"}}
         />
         </Link>
         <Link to="/journalentries" style={{ textDecoration: "none"}}>
@@ -68,7 +68,7 @@ export function TopNav() {
           href="#"
           label="Journal"
           onClick={handleClick}
-          style={{fontFamily: "Montserrat", fontSize: "16px"}}
+          style={{fontFamily: "Montserrat", fontSize: "15px", fontWeight: "bold"}}
         />
         </Link>
         <Link to="/favourites" style={{ textDecoration: "none"}}>
@@ -77,7 +77,7 @@ export function TopNav() {
             href="#"
             label="Favourites"
             onClick={handleClick}
-            style={{fontFamily: "Montserrat", fontSize: "16px"}}
+            style={{fontFamily: "Montserrat", fontSize: "15px", fontWeight: "bold"}}
           />
         </Link>
       </ThemeProvider>

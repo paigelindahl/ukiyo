@@ -45,7 +45,7 @@ export function Dashboard(props) {
         </Link>
       </div>
       <div className="four">
-        <Link to="/journal" className="dashboard-title">
+        <Link to="/journalentries" className="dashboard-title">
           <h4>Journal</h4>
           <img
             className="journal-icon"
