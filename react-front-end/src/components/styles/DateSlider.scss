@@ -1,7 +1,7 @@
 .scroll-date {
   overflow: auto;
   white-space: nowrap;
-  font-size: 25px;
+  font-size: 30px;
   padding:14px;
 }
 
@@ -10,8 +10,9 @@
 }
 
 .date-container {
+  font-family: "Montserrat";
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   // margin: auto;
   width: 80%
 }
@@ -21,6 +22,6 @@
 }
 
 .selected-date {
-  font-size: 35px;
-  font-weight: 400;
+  font-size: 42px;
+  font-weight: 800;
 }
