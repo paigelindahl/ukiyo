@@ -1,5 +1,5 @@
 INSERT INTO meditations (user_id, link, title, is_favourited) VALUES (1, 'https://open.spotify.com/embed/track/583Uz7AvKJEPSpwmzkPeTG', '5-Minute Meditation: Appreciating', true);
-INSERT INTO meditations (user_id, link, title, is_favourited) VALUES (1, 'https://open.spotify.com/embed/track/7szVmfe3Y110CS9SHamWZH', '10-Minute Meditation: Evening Stroll', true);
+INSERT INTO meditations (user_id, link, title, is_favourited) VALUES (1, 'https://open.spotify.com/embed/track/7szVmfe3Y110CS9SHamWZH', '10-Minute Meditation: Evening', true);
 INSERT INTO meditations (user_id, link, title, is_favourited) VALUES (1, 'https://open.spotify.com/embed/track/6mi5lYz9NuIlmRfO8bT4gm', '5-Minute Meditation: Guided', true);
 INSERT INTO meditations (user_id, link, title, is_favourited) VALUES (1, 'https://open.spotify.com/embed/track/7tnesh1ClZdJgJLP1H0ea3', '10-Minute Meditation: Guided', true);
 INSERT INTO meditations (user_id, link, title, is_favourited) VALUES (1, 'https://open.spotify.com/embed-podcast/episode/6eOWDa0NnCM6hKZtmOJUYC', '10-Minute Meditation: Positivity', true);

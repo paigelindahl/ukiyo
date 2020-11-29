@@ -34,9 +34,14 @@ export function FavYoga(props) {
     <>
       {favouriteYoga.map((fav, index) => (
         <div className="fav-container">
+          <div className="block">
           <span className="dot" style={{backgroundColor: newColours[index]}}></span>
-          <h5>{fav.title}</h5>
+          </div>
+
+          <p className="quote-author">{fav.title}</p>
+          <span className="play-modal">
           <TransitionModal title={fav.title} link={fav.link} />
+          </span>
         </div>
       ))}
     </>
