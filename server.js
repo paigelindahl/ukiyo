@@ -26,21 +26,7 @@ App.get("/api/data", (req, res) =>
   })
 );
 
-if (process.env.NODE_ENV === 'production') {
-  // Serve any static files
-  App.use(Express.static(path.join(__dirname, '/react-front-end/build')));
-  // Handle React routing, return all requests to React app
-  App.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, '/react-front-end/build', 'index.html'));
-  });
-}
 
-App.listen(port, () => {
-  // eslint-disable-next-line no-console
-  console.log(
-    `Express seems to be listening on port ${port} so that's pretty good 👍`
-  );
-});
 
 //add a task
 App.post("/tasks", async (req, res) => {
@@ -293,4 +279,20 @@ App.post("/favquotes", async (req, res) => {
   } catch (err) {
     console.error(err.message);
   }
+});
+
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  App.use(Express.static(path.join(__dirname, '/react-front-end/build')));
+  // Handle React routing, return all requests to React app
+  App.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, '/react-front-end/build', 'index.html'));
+  });
+}
+
+App.listen(port, () => {
+  // eslint-disable-next-line no-console
+  console.log(
+    `Express seems to be listening on port ${port} so that's pretty good 👍`
+  );
 });
