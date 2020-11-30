@@ -9,6 +9,9 @@ const dbHelpers = require("./helpers/dbHelpers")(db);
 
 const port = process.env.PORT || 8080;
 
+// Static build for Heroku deployment
+
+
 // Express Configuration
 // App.use('/api/users', usersRouter(dbHelpers));
 App.use(BodyParser.urlencoded({ extended: false }));
@@ -21,6 +24,15 @@ App.get("/api/data", (req, res) =>
     message: "Seems to work!",
   })
 );
+
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  App.use(express.static(path.join(__dirname, './react-front-end/build')));
+  // Handle React routing, return all requests to React app
+  App.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, './react-front-end/build', 'index.html'));
+  });
+}
 
 App.listen(port, () => {
   // eslint-disable-next-line no-console
