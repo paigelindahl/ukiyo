@@ -28,10 +28,10 @@ App.get("/api/data", (req, res) =>
 
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
-  App.use(Express.static(path.join(__dirname, 'react-front-end/build')));
+  App.use(Express.static(path.join(__dirname, '/react-front-end/build')));
   // Handle React routing, return all requests to React app
   App.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'react-front-end/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '/react-front-end/build', 'index.html'));
   });
 }
 
