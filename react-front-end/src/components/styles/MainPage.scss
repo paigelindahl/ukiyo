@@ -1,6 +1,7 @@
 .background-image {
   background: url("https://github.com/saadxislam/ukiyo/blob/master/react-front-end/public/images/Background1-Ukiyo.png?raw=true") no-repeat;
-  height: 101vh;
+  height: 100vh;
+  overflow: hidden;
   background-size: cover;
   background-position: bottom;
 }
@@ -8,6 +9,7 @@
 .background-image2 {
   background: url("https://github.com/saadxislam/ukiyo/blob/master/react-front-end/public/images/Background2-Ukiyo-01.png?raw=true") no-repeat;
   height: 100vh;
+  overflow: hidden;
   background-size: cover;
   background-position: bottom;
 }
