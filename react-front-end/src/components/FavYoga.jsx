@@ -8,7 +8,7 @@ export function FavYoga(props) {
 
     try {
 
-     const response = await fetch("http://localhost:8080/favyoga")
+     const response = await fetch("/favyoga")
 
      const jsonData = await response.json();
      setFavouriteYoga(jsonData);

@@ -22,7 +22,7 @@ export function FavouriteBtn(props) {
 
   const addFavouriteYoga = async function (faveId) {
     try {
-      await fetch(`http://localhost:8080/yoga/${faveId}`, {
+      await fetch(`/yoga/${faveId}`, {
         method: "PUT",
       });
     } catch (error) {
@@ -32,7 +32,7 @@ export function FavouriteBtn(props) {
 
   const addFavouriteMeditate = async function (faveId) {
     try {
-      await fetch(`http://localhost:8080/meditate/${faveId}`, {
+      await fetch(`/meditate/${faveId}`, {
         method: "PUT",
       });
     } catch (error) {

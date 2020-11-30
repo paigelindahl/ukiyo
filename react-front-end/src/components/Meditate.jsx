@@ -10,7 +10,7 @@ export function Meditate() {
 
     try {
 
-     const response = await fetch("http://localhost:8080/meditate")
+     const response = await fetch("/meditate")
 
      const jsonData = await response.json();
      setMeditation(jsonData);

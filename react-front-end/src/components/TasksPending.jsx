@@ -42,7 +42,7 @@ export function TasksPending() {
   const getPending = async (event) => {
     try {
       // const body = { task, completed: false, user_id: 1 };
-      const response = await fetch("http://localhost:8080/taskspending");
+      const response = await fetch("/taskspending");
       const jsonData = await response.json();
 
       setTasks(jsonData);
@@ -60,7 +60,7 @@ export function TasksPending() {
   const deleteTask = async () => {
     try {
       await fetch(
-        `http://localhost:8080/tasks/${selectedId}`,
+        `/tasks/${selectedId}`,
         {
           method: "DELETE",
         }
@@ -74,7 +74,7 @@ export function TasksPending() {
   const moveTask = async () => {
     try {
       await fetch(
-        `http://localhost:8080/taskscompleted/${selectedId}`,
+        `/taskscompleted/${selectedId}`,
         {
           method: "PUT",
           // headers: { "Content-Type": "application/json" },

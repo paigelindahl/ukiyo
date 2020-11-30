@@ -31,7 +31,7 @@ export function EditModal(props) {
   const onEditClick = async () => {
     try {
       const editTask = await fetch(
-        `http://localhost:3000/tasks/${props.selectedId}`
+        `/tasks/${props.selectedId}`
       );
       const jsonData = await editTask.json();
       setEditContent(jsonData.task);
@@ -44,7 +44,7 @@ export function EditModal(props) {
     const task = editContent;
     const body = { task };
     try {
-      await fetch(`http://localhost:3000/tasks/${props.selectedId}`, {
+      await fetch(`tasks/${props.selectedId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

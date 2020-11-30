@@ -43,7 +43,7 @@ export function TasksCompleted() {
   const getCompleted = async (event) => {
     try {
       // const body = { task, completed: false, user_id: 1 };
-      const response = await fetch("http://localhost:8080/taskscompleted");
+      const response = await fetch("/taskscompleted");
       const jsonData = await response.json();
 
       setTasksCompleted(jsonData);

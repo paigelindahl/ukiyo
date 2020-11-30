@@ -26,7 +26,7 @@ export function JournalSad(props) {
     try {
       const body = { answerOne, answerTwo, answerThree };
 
-      await fetch("http://localhost:8080/journal1", {
+      await fetch("/journal1", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

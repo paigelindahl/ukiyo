@@ -14,7 +14,7 @@ export function CreateTask(props) {
     try {
       const body = { task, completed: false, user_id: 1 };
 
-     await fetch("http://localhost:8080/tasks", {
+     await fetch("/tasks", {
        method: "POST",
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify(body)

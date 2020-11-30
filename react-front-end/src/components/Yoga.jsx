@@ -10,7 +10,7 @@ export function Yoga() {
 
     try {
 
-     const response = await fetch("http://localhost:8080/yoga")
+     const response = await fetch("/yoga")
 
      const jsonData = await response.json();
      setYoga(jsonData);

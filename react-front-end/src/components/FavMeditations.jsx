@@ -6,7 +6,7 @@ export function FavMeditations(props) {
 
   const getFavouriteMeditations = async () => {
     try {
-      const response = await fetch("http://localhost:8080/favmeditation");
+      const response = await fetch("/favmeditation");
 
       const jsonData = await response.json();
       setFavouriteMeditations(jsonData);

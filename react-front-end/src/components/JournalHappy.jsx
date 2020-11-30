@@ -27,7 +27,7 @@ export function JournalHappy() {
   const onSubmit = async(event) => {
     try {
       const body = { answerOne, answerTwo, answerThree };
-     await fetch("http://localhost:8080/journal2", {
+     await fetch("/journal2", {
        method: "POST",
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify(body)

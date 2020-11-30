@@ -7,7 +7,7 @@ export function FavQuotes(props) {
   const [favouriteQuotes, setFavouriteQuotes] = useState([]);
   const getFavouriteQuotes = async () => {
     try {
-      const response = await fetch("http://localhost:8080/favquotes");
+      const response = await fetch("/favquotes");
 
       const jsonData = await response.json();
       setFavouriteQuotes(jsonData);

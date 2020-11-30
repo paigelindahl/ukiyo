@@ -15,7 +15,7 @@ export function JournalEntries() {
   const getEntriesForTheDay = async (event) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/journalentries/${selectedDate}`
+        `/journalentries/${selectedDate}`
       );
       const jsonData = await response.json();
       console.log("jsonData :", jsonData);
