@@ -9,7 +9,7 @@ import {LogoProfile} from "./LogoProfile";
 
 export function MainPage(props) {
   const [sliderValue, setSliderValue] = useState(50);
-  console.log("sliderValue :", sliderValue);
+
 
   return (
     <div className="background-image">

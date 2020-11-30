@@ -45,15 +45,15 @@ export function JournalSad(props) {
       <form>
         <MultilineTextFields
           setAnswers={settingAnswerOne}
-          question="What is something that made you smile in the last little while?"
+          question="My greatest qualities are..."
         />
         <MultilineTextFields
           setAnswers={settingAnswerTwo}
-          question="What is something you are looking forward to?"
+          question="Something you are looking forward to?"
         />
         <MultilineTextFields
           setAnswers={settingAnswerThree}
-          question="What are three things you are grateful for?"
+          question="Three things you are grateful for?"
         />
       </form>
       <ArrowForwardIosIcon

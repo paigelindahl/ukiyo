@@ -46,9 +46,9 @@ export function JournalHappy() {
       <LogoProfile/>
       <JournalTitle />
       <form>
-        <MultilineTextFields setAnswers={settingAnswerOne}  question="What is something that inspired you recently?"/>
-        <MultilineTextFields setAnswers={settingAnswerTwo}  question="What is your second question?"/>
-        <MultilineTextFields setAnswers={settingAnswerThree}  question="Question three?"/>
+        <MultilineTextFields setAnswers={settingAnswerOne}  question="Something that inspired you recently?"/>
+        <MultilineTextFields setAnswers={settingAnswerTwo}  question="Something you accomplished today?"/>
+        <MultilineTextFields setAnswers={settingAnswerThree}  question="Three things you are grateful for?"/>
       </form>
       <ArrowForwardIosIcon onClick={onSubmit} fontSize="large" className="arrow-submit"/>
       <Link to="/dashboard" className="skip-link">
