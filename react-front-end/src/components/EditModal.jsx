@@ -55,12 +55,13 @@ export function EditModal(props) {
     }
     props.setTasks((prev) => {
       const newArray = [...prev];
-      const updatedTask = newArray.find((task) => (task.id = props.selectedId));
+      const updatedTask = newArray.find((singleTask) => (singleTask.id = props.selectedId));
       if (updatedTask) {
         updatedTask.task = editContent;
       }
       return newArray;
     });
+    window.location = "/tasks"
   };
 
   const handleOpen = () => {

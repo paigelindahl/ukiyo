@@ -31,7 +31,7 @@ export default function MultilineTextFields(props) {
           <TextField
             id="standard-multiline-flexible"
             multiline
-            rowsMax={3}
+            rowsMax={1}
             value={response}
             onChange={handleChange}
           />

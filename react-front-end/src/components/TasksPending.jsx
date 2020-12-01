@@ -132,7 +132,7 @@ export function TasksPending() {
             <TableCell align="center" className="icons-style">
               <DoneIcon onClick={moveTask} selectedId={selectedId} style={{ paddingRight: "15px" }} />
               <DeleteIcon onClick={deleteTask} />
-              <EditModal setTasks={setTasks} selectedId={selectedId} style={{display: "inlineBlock"}}/>
+              <EditModal tasks={tasks} setTasks={setTasks} selectedId={selectedId} style={{display: "inlineBlock"}}/>
             </TableCell>
             <TableCell align="center"></TableCell>
           </TableRow>

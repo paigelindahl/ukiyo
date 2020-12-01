@@ -82,26 +82,13 @@ App.get("/taskscompleted", async (req, res) => {
   }
 });
 
-//get a single task
-App.get("/tasks/:id", async (req, res) => {
-  try {
-    const { id } = req.params;
-    const singleTask = await db.query("SELECT * FROM tasks WHERE id = $1", [
-      id,
-    ]);
-
-    res.json(singleTask.rows[0]);
-  } catch (err) {
-    console.error(err.message);
-  }
-});
 
 //delete a single task
 App.delete("/tasks/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const deleteTask = await db.query("DELETE FROM tasks WHERE id = $1", [id]);
-
+    
     res.json("to do was deleted");
   } catch (err) {
     console.error(err.message);
@@ -116,13 +103,27 @@ App.put("/tasks/:id", async (req, res) => {
     const updateTask = await db.query(
       "UPDATE tasks SET task = $1 WHERE id = $2",
       [task, id]
-    );
-
-    res.json("it was update");
-  } catch (err) {
-    console.error(err.message);
-  }
-});
+      );
+      
+      res.json("it was update");
+    } catch (err) {
+      console.error(err.message);
+    }
+  });
+  
+  //get a single task
+  App.get("/tasks/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const singleTask = await db.query("SELECT * FROM tasks WHERE id = $1", [
+        id,
+      ]);
+  
+      res.json(singleTask.rows[0]);
+    } catch (err) {
+      console.error(err.message);
+    }
+  });
 
 //update a single task to completed from incomplete
 App.put("/taskscompleted/:id", async (req, res) => {
@@ -273,7 +274,7 @@ App.post("/favquotes", async (req, res) => {
   const {author, text} = req.body;
   
   try {
-    const addQuote = await db.query("INSERT INTO quotes(content, author, user_id, is_favourited) VALUES($1, $2, 1, true) RETURNING *", [author, text]);
+    const addQuote = await db.query("INSERT INTO quotes(content, author, user_id, is_favourited) VALUES($1, $2, 1, true) RETURNING *", [text, author]);
     res.json("added quote to DB");
   } catch (err) {
     console.error(err.message);
