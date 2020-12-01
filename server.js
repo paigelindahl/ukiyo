@@ -33,7 +33,6 @@ App.post("/tasks", async (req, res) => {
   const { task, completed, user_id } = req.body;
   console.log(typeof user_id);
   console.log("are you hitting this?");
-
   try {
     const newTodo = await db.query(
       "INSERT INTO tasks(task, created_at, completed, user_id) VALUES($1, NOW(), $2, $3) RETURNING *",
@@ -46,14 +45,14 @@ App.post("/tasks", async (req, res) => {
 });
 
 //get all the tasks
-App.get("/tasks", async (req, res) => {
-  try {
-    const allTodos = await db.query("SELECT * FROM tasks");
-    res.json(allTodos.rows);
-  } catch (err) {
-    console.error(err.message);
-  }
-});
+// App.get("/tasks", async (req, res) => {
+//   try {
+//     const allTodos = await db.query("SELECT * FROM tasks");
+//     res.json(allTodos.rows);
+//   } catch (err) {
+//     console.error(err.message);
+//   }
+// });
 
 //get all incomplete tasks
 App.get("/taskspending", async (req, res) => {
