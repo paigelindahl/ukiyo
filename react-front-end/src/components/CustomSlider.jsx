@@ -14,7 +14,7 @@ import "./styles/CustomSlider.scss";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: 200 + theme.spacing(3) * 2,
-    marginTop: "100px",
+    marginTop: "150px",
   },
 }));
 
