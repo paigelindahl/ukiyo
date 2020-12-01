@@ -204,7 +204,7 @@ App.post("/journal2", async (req, res) => {
 App.get("/journalentries/:selectedDate", async (req, res) => {
   try {
     const { selectedDate } = req.params;
-    const singleJournalEntry = await db.query(`SELECT * FROM journal_entries WHERE created_at= '2020-11-${selectedDate}'`);
+    const singleJournalEntry = await db.query(`SELECT * FROM journal_entries WHERE created_at= '2020-12-${selectedDate}'`);
 
     res.json(singleJournalEntry.rows);
   } catch (err) {

@@ -10,7 +10,7 @@ import "./styles/JournalEntries.scss";
 
 export function JournalEntries() {
   const [journalEntries, setJournalEntries] = useState([]);
-  const [selectedDate, setSelectedDate] = useState(26);
+  const [selectedDate, setSelectedDate] = useState(3);
 
   const getEntriesForTheDay = async (event) => {
     try {

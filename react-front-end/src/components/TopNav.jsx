@@ -28,14 +28,13 @@ const StyledBreadcrumb = withStyles((theme) => ({
     },
     "&:active": {
       boxShadow: theme.shadows[1],
-      backgroundColor: emphasize(theme.palette.primary.main, 0.12),
+      backgroundColor: emphasize(theme.palette.primary.main),
     },
   },
 }))(Chip);
 
 function handleClick(event) {
-  // event.preventDefault();
-  // console.log("event", event.target);
+
 }
 
 export function TopNav() {

@@ -4,6 +4,7 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import EditIcon from "@material-ui/icons/Edit";
+import "./styles/TasksPending.scss";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -99,7 +100,7 @@ export function EditModal(props) {
         <Fade in={open}>
           <div className={classes.paper}>
             <h2 id="transition-modal-title">Edit task</h2>
-            <input type="text" value={editContent} onChange={handleChange} />
+            <input className="edit-task-input" type="text" value={editContent} onChange={handleChange} />
             <button
               onClick={(e) => {
                 putEdit(e);
