@@ -58,7 +58,7 @@ App.post("/tasks", async (req, res) => {
 App.get("/taskspending", async (req, res) => {
   try {
     const pendingTodos = await db.query(
-      "SELECT * FROM tasks WHERE completed = false"
+      "SELECT * FROM tasks WHERE completed = false ORDER BY id DESC"
     );
     console.log("pendingTodos :", pendingTodos.rows);
 
@@ -72,7 +72,7 @@ App.get("/taskspending", async (req, res) => {
 App.get("/taskscompleted", async (req, res) => {
   try {
     const completedTodos = await db.query(
-      "SELECT * FROM tasks WHERE completed = true"
+      "SELECT * FROM tasks WHERE completed = true ORDER BY id DESC"
     );
     // console.log("completedTodos :", completedTodos.rows);
 
@@ -204,7 +204,7 @@ App.post("/journal2", async (req, res) => {
 App.get("/journalentries/:selectedDate", async (req, res) => {
   try {
     const { selectedDate } = req.params;
-    const singleJournalEntry = await db.query(`SELECT * FROM journal_entries WHERE created_at= '2020-12-${selectedDate}'`);
+    const singleJournalEntry = await db.query(`SELECT * FROM journal_entries WHERE created_at= '2020-12-${selectedDate}' LIMIT 1`);
 
     res.json(singleJournalEntry.rows);
   } catch (err) {
