@@ -82,7 +82,7 @@ export function ToolbarFave() {
           }}
           >
           <Tab label="Quotes" {...a11yProps(0)} />
-          <Tab label="Mediations" {...a11yProps(1)} />
+          <Tab label="Meditations" {...a11yProps(1)} />
           <Tab label="Yoga" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
