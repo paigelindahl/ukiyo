@@ -1,6 +1,6 @@
 # UKIYO
 
-Contributors: [Saad Islam](https://github.com/saadxislam) [Kourtney Huget](https://github.com/kourtneyhuget) [Paige Lindahl](https://github.com/paigelindahl)
+**bold**Contributors: [Saad Islam](https://github.com/saadxislam), [Kourtney Huget](https://github.com/kourtneyhuget), [Paige Lindahl](https://github.com/paigelindahl)**bold**
 
 ## About This Project
 
