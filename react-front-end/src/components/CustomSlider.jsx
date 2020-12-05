@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
@@ -8,13 +8,13 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import Tooltip from "@material-ui/core/Tooltip";
 import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfied";
 import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissatisfied";
-import SentimentSatisfiedIcon from '@material-ui/icons/SentimentSatisfied';
+import SentimentSatisfiedIcon from "@material-ui/icons/SentimentSatisfied";
 import "./styles/CustomSlider.scss";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: 200 + theme.spacing(3) * 2,
-    marginTop: "200px",
+    marginTop: "280px",
   },
 }));
 
@@ -40,10 +40,7 @@ ValueLabelComponent.propTypes = {
   children: PropTypes.element.isRequired,
   open: PropTypes.bool.isRequired,
   value: PropTypes.number.isRequired,
-  
 };
-
-
 
 export function CustomSlider(props) {
   const classes = useStyles();
