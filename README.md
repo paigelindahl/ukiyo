@@ -7,15 +7,15 @@
 Ukiyo is a one stop wellness app intended to help alleviate stress and promote positive feelings. Ukiyo provides a dashboard with access to meditation, yoga, gratitude journaling and a todo list organizer. Every morning, Ukiyo asks the user how they are feeling and provides journaling questions based on their response. Users are then prompted to set one task for the day that they can go to bed content knowing they accomplished. The user is able to save quotes, yoga videos, and meditation videos to their favourites and access past journaling entries.
 
 ## FINAL PRODUCT
-![Main]()
-![Journal 1]()
-![Create Task]()
-![Dashboard]()
-![fav_quotes]()
-![fav_yoga]()
-![tasks]()
-![journal]()
-![GIF]()
+![Main](https://github.com/saadxislam/ukiyo/blob/master/docs/main.jpg)
+![Journal 1](https://github.com/saadxislam/ukiyo/blob/master/docs/journal1.jpg)
+![Create Task](https://github.com/saadxislam/ukiyo/blob/master/docs/createtask.jpg)
+![Dashboard](https://github.com/saadxislam/ukiyo/blob/master/docs/dashboard.jpg)
+![fav_quotes](https://github.com/saadxislam/ukiyo/blob/master/docs/fav_quotes.jpg)
+![fav_yoga](https://github.com/saadxislam/ukiyo/blob/master/docs/fav_yoga.jpg)
+![tasks](https://github.com/saadxislam/ukiyo/blob/master/docs/tasks.jpg)
+![journal](https://github.com/saadxislam/ukiyo/blob/master/docs/journal.jpg)
+![GIF](https://github.com/saadxislam/ukiyo/blob/master/docs/ukiyo_gif.mov)
 ## STACK USED
 
 ### Front-End
