@@ -15,7 +15,7 @@ Ukiyo is a one stop wellness app intended to help alleviate stress and promote p
 ![fav_yoga](https://github.com/saadxislam/ukiyo/blob/master/docs/fav_yoga.jpg)
 ![tasks](https://github.com/saadxislam/ukiyo/blob/master/docs/tasks.jpg)
 ![journal](https://github.com/saadxislam/ukiyo/blob/master/docs/journal.jpg)
-![GIF](https://github.com/saadxislam/ukiyo/blob/master/docs/ukiyo_gif.mov)
+![GIF](https://media.giphy.com/media/6IxFfxVeEXpKE8iPtC/source.mov)
 ## STACK USED
 
 ### Front-End
